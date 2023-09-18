@@ -29,6 +29,7 @@
 			<div class="ttr-header-menu">
 				<!-- header left menu start -->
 				<ul class="ttr-header-navigation">
+					<li>
 						<a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
 					</li>						
 				</ul>
