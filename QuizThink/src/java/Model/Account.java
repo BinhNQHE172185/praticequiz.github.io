@@ -8,6 +8,6 @@ package Model;
  *
  * @author LEMONLORD
  */
-public class User {
+public class Account {
     
 }
