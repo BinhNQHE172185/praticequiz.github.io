@@ -15,6 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <jsp:include page="Dashboard_header.jsp"></jsp:include>
+        <jsp:include page="Dashboard_sidebar.jsp"></jsp:include>
     </body>
 </html>
