@@ -70,13 +70,7 @@
         </div>
         
         <div class="container-fluid">
-                <div class="db-breadcrumb">
-                        <h4 class="breadcrumb-title">Dashboard</h4>
-                        <ul class="db-breadcrumb-list">
-                                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                                <li>Dashboard</li>
-                        </ul>
-                </div>	
+                s	
         </div>
             <!-- Main content -->
         <section class="content">
