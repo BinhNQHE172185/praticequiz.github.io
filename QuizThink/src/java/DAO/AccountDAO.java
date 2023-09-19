@@ -4,6 +4,10 @@
  */
 package DAO;
 
+import Model.Account;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author LEMONLORD

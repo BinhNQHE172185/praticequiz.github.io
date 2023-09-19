@@ -31,7 +31,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="Front End/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
-        <title>EduChamp : Education HTML Template </title>
+        <title>Quiz Think : Prepare to Quiz Think with Awesomeness! </title>
 
         <!-- MOBILE SPECIFIC ============================================= -->
         <meta name="viewport" content="width=device-width, initial-scale=1">

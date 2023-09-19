@@ -32,7 +32,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="Front End/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
-        <title>EduChamp : Education HTML Template </title>
+        <title>Quiz Think : Prepare to Quiz Think with Awesomeness! </title>
 
         <!-- MOBILE SPECIFIC ============================================= -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,13 +69,13 @@
                             <h2 class="title-head">Login to your <span>Account</span></h2>
                                 <p>Don't have an account? <a href="Register.jsp">Create one here</a></p>
                         </div>	
-                        <form class="contact-bx">
+                        <form class="contact-bx" action="" method="">
                             <div class="row placeani">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <label>Your Name</label>
-                                            <input name="dzName" type="text" required="" class="form-control">
+                                            <label>Your email</label>
+                                            <input name="email" type="email" required="" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                     <div class="form-group">
                                         <div class="input-group"> 
                                             <label>Your Password</label>
-                                            <input name="dzEmail" type="password" class="form-control" required="">
+                                            <input name="password" type="password" class="form-control" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                             <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
                                             <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
                                         </div>
-                                        <a href="forget-password.html" class="ml-auto">Forgot Password?</a>
+                                        <a href="#" class="ml-auto">Forgot Password?</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 m-b30">
@@ -120,7 +120,6 @@
         <script src="Front End/assets/vendors/owl-carousel/owl.carousel.js"></script>
         <script src="Front End/assets/js/functions.js"></script>
         <script src="Front End/assets/js/contact.js"></script>
-        <script src='Front End/assets/vendors/switcher/switcher.js'></script>
     </body>
 
 </html>
