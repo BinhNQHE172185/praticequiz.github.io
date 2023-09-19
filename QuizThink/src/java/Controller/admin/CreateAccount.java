@@ -5,6 +5,7 @@
 
 package Controller.admin;
 
+import DAO.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -31,43 +32,26 @@ public class CreateAccount extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //
-        
-//        private int account_id;
-//    private String username;
-//    private String password;
-//    private String email;
-//    private String status;
-//    private String gender;
-//    private String avatar;
-//    private String fullname;
-//    private Date DOB;
-//    private String address;
-//    private String phonenumber;
-//    private Date createDate;
-//    private Date modifyDate;
-//    private String passwordToken;
-//    private int role;
-
         // get parameter to create new account
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String email = request.getParameter("password");
-        String status = request.getParameter("password");
-        String gender = request.getParameter("password");
-        String avatar = request.getParameter("password");
-        String fullname = request.getParameter("password");
+        String email = request.getParameter("email");
+        String status = request.getParameter("status");
+        String gender = request.getParameter("gender");
+        String avatar = request.getParameter("avatar");
+        String fullname = request.getParameter("fullname");
         String DOB = request.getParameter("DOB");
-        String address = request.getParameter("password");
-        String phonenumber = request.getParameter("password");
-        String createDate = request.getParameter("password");
-        String modifyDate = request.getParameter("password");
+        String address = request.getParameter("address");
+        String phonenumber = request.getParameter("phonenumber");
         
-        String role = request.getParameter("password");
+        String role = request.getParameter("role");
         int role_id = Integer.parseInt(role);
         
+        AccountDAO DAO = new AccountDAO();
         
+        DAO.createAnyAccount(username, password, email, status, gender, avatar, fullname, DOB, address, phonenumber, role_id);
         
+        response.sendRedirect("Dashboard.jsp");
         
     } 
 

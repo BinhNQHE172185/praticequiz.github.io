@@ -22,9 +22,9 @@ public class AccountDAO {
     ResultSet rs = null;
     
     // Create new Account which could be expert marketing sale, customer, membership
-    public void createAnyAccount(String username, String password, String email, String status, String gender, String avatar, String fullname, String address, String phonenumber, String passwordToken, int roleId){
-        String query ="INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [passwordToken], [role_id])\n" +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, '1990-01-01', ?, ?, ?, ?, ?, ?);";
+    public void createAnyAccount(String username, String password, String email, String status, String gender, String avatar, String fullname, String DOB, String address, String phonenumber, int roleId){
+        String query ="INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [role_id])\n" +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -35,13 +35,13 @@ public class AccountDAO {
             ps.setString(5, gender);
             ps.setString(6, avatar);
             ps.setString(7, fullname);
-            ps.setString(8, address);
-            ps.setString(9, phonenumber);
+            ps.setString(8, DOB);
+            ps.setString(9, address);
+            ps.setString(10, phonenumber);
             
             LocalDateTime currentTime = LocalDateTime.now();
             Date createdDate = Date.valueOf(currentTime.toLocalDate());
-            ps.setDate(10, createdDate);
-            ps.setString(12, passwordToken);
+            ps.setDate(11, createdDate);
             ps.setInt(13, roleId);
             ps.executeUpdate(); // no result ==> no need result set
         } catch (Exception e) {

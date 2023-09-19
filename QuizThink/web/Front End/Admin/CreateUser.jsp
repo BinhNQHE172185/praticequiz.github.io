@@ -72,7 +72,7 @@
 							<h4>Create User</h4>
 						</div>
 						<div class="widget-inner">
-							<form class="edit-profile m-b30">
+                                                    <form class="edit-profile m-b30" action="createaccount" method="POST">
 								<div class="">
                                                                         <div class="form-group row">
                                                                             <div class="col-sm-10  ml-auto">
@@ -82,33 +82,37 @@
                                                                         <div class="form-group row">
 										<label class="col-sm-2 col-form-label">UserName</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
+                                                                                    <input class="form-control" type="text" name="username" placeholder="Input Username">
 										</div>
 									</div>
                                                                         <div class="form-group row">
 										<label class="col-sm-2 col-form-label">Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
+											<input class="form-control" type="password" name="password" placeholder="Input Password">
 										</div>
 									</div>
                                                                         <div class="form-group row">
 										<label class="col-sm-2 col-form-label">Email</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
+											<input class="form-control" type="email" name="email" placeholder="Input Email">
 										</div>
 									</div>
-<!--                                                                        <div class="form-group row">
-										<label class="col-sm-2 col-form-label">Role</label>
-										<div class="col-sm-7">
-                                                                                        <select name="Role">
-                                                                                            <option>Guest</option>
-                                                                                            <option>Customer</option>
-                                                                                            <option>Membership</option>
-                                                                                            <option>Marketing/Sale</option>
-                                                                                            <option>Expert</option>
-                                                                                        </select>
-										</div>
-									</div>-->
+                                                                        <div class="form-group row">
+                                                                            <label class="col-sm-2 col-form-label">Role</label>
+                                                                            <div class="col-sm-7">
+                                                                                <input type="radio" id="customerRole" name="role" value="5">
+                                                                                <label class="col-sm-2 col-form-label" for="customerRole">Customer</label><br>
+
+                                                                                <input type="radio" id="expertRole" name="role" value="3">
+                                                                                <label class="col-sm-2 col-form-label" for="expertRole">Expert</label><br>
+
+                                                                                <input type="radio" id="saleRole" name="role" value="2">
+                                                                                <label class="col-sm-2 col-form-label" for="saleRole">Sale</label><br>
+
+                                                                                <input type="radio" id="membershipRole" name="role" value="6">
+                                                                                <label class="col-sm-2 col-form-label" for="membershipRole">Membership</label><br>
+                                                                            </div>
+                                                                        </div>
 									<div class="form-group row">
                                                                             <div class="col-sm-10  ml-auto">
                                                                                 <h3>2. Personal Details</h3>
@@ -117,43 +121,47 @@
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Full Name</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
+											<input class="form-control" type="text" name="fullname" placeholder="Full Name">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Gender</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="CTO">
+                                                                                    <input type="radio" id="saleRole" name="gender" value="Male">
+                                                                                    <label class="col-sm-2 col-form-label" for="saleRole">Male</label><br>
+
+                                                                                    <input type="radio" id="membershipRole" name="gender" value="Female">
+                                                                                    <label class="col-sm-2 col-form-label" for="membershipRole">Female</label><br>
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">DOB</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="EduChamp">
+                                                                                    <input class="form-control" type="date" name="DOB" placeholder="Date of birth">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Phone Number</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="+120 012345 6789">
+                                                                                    <input class="form-control" type="text" name="phonenumber" placeholder="Phone Number">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Address</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
+                                                                                    <input class="form-control" type="text" name="address" placeholder="Address">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Avatar</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.instagram.com">
+                                                                                    <input class="form-control" type="text" name="avatar" placeholder="Image URL">
 										</div>
 									</div>  
                                                                         <div class="form-group row">
 										<label class="col-sm-2 col-form-label">Status</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.instagram.com">
+											<input class="form-control" type="text" name="status" placeholder="Status">
 										</div>
 									</div>
 								</div>
@@ -163,7 +171,7 @@
 											<div class="col-sm-2">
 											</div>
 											<div class="col-sm-7">
-												<button type="reset" class="btn">Save changes</button>
+												<button type="submit" class="btn">Save changes</button>
 												<button type="reset" class="btn-secondry">Cancel</button>
 											</div>
 										</div>
