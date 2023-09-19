@@ -69,8 +69,30 @@
                 </div>	
         </div>
         
+        
+        <!-- NEED REPAIR -->
         <div class="container-fluid">
-                s	
+            <table>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="Search user by name"></td>
+                    <td><button type="button" class="btn btn-block btn-success">Search</button></td>
+                    <td>
+                        <form>
+                            <label for="category">Choose a Category:</label>
+                            <select id="category" name="category">
+                                <option value="electronics">Electronics</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="electronics">Electronics</option>
+                            </select>
+                       </form>
+                        <button type="button" class="btn btn-block btn-success">Sort</button>
+                    </td>
+                    <td><button type="button" class="btn btn-block btn-success">Add</button></td>
+                </tr>
+            </table>
+                
         </div>
             <!-- Main content -->
         <section class="content">
