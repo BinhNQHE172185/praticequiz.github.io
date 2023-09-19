@@ -60,7 +60,123 @@
 	
 </head>
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
-	
+	<jsp:include page="Dashboard_header.jsp"></jsp:include>  
+        <!--Main container start -->
+	<main class="ttr-wrapper">
+		<div class="container-fluid">	
+			<div class="row">
+				<!-- Your Profile Views Chart -->
+				<div class="col-lg-12 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Create User</h4>
+						</div>
+						<div class="widget-inner">
+							<form class="edit-profile m-b30">
+								<div class="">
+                                                                        <div class="form-group row">
+                                                                            <div class="col-sm-10  ml-auto">
+                                                                                    <h3>1. Account</h3>
+                                                                            </div>
+									</div>
+                                                                        <div class="form-group row">
+										<label class="col-sm-2 col-form-label">UserName</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="Mark Andre">
+										</div>
+									</div>
+                                                                        <div class="form-group row">
+										<label class="col-sm-2 col-form-label">Password</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="Mark Andre">
+										</div>
+									</div>
+                                                                        <div class="form-group row">
+										<label class="col-sm-2 col-form-label">Email</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="Mark Andre">
+										</div>
+									</div>
+<!--                                                                        <div class="form-group row">
+										<label class="col-sm-2 col-form-label">Role</label>
+										<div class="col-sm-7">
+                                                                                        <select name="Role">
+                                                                                            <option>Guest</option>
+                                                                                            <option>Customer</option>
+                                                                                            <option>Membership</option>
+                                                                                            <option>Marketing/Sale</option>
+                                                                                            <option>Expert</option>
+                                                                                        </select>
+										</div>
+									</div>-->
+									<div class="form-group row">
+                                                                            <div class="col-sm-10  ml-auto">
+                                                                                <h3>2. Personal Details</h3>
+                                                                            </div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">Full Name</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="Mark Andre">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">Gender</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="CTO">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">DOB</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="EduChamp">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">Phone Number</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="+120 012345 6789">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">Address</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-2 col-form-label">Avatar</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="www.instagram.com">
+										</div>
+									</div>  
+                                                                        <div class="form-group row">
+										<label class="col-sm-2 col-form-label">Status</label>
+										<div class="col-sm-7">
+											<input class="form-control" type="text" value="www.instagram.com">
+										</div>
+									</div>
+								</div>
+								<div class="">
+									<div class="">
+										<div class="row">
+											<div class="col-sm-2">
+											</div>
+											<div class="col-sm-7">
+												<button type="reset" class="btn">Save changes</button>
+												<button type="reset" class="btn-secondry">Cancel</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- Your Profile Views Chart END-->
+			</div>
+		</div>
+	</main>
 <!-- External JavaScripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
