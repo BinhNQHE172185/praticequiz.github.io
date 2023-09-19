@@ -25,7 +25,7 @@ public class Account {
     private Date createDate;
     private Date modifyDate;
     private String passwordToken;
-    private int role;
+    private int role_id;
 
     public Account() {
     }
@@ -45,7 +45,7 @@ public class Account {
         this.createDate = createDate;
         this.modifyDate = modifyDate;
         this.passwordToken = passwordToken;
-        this.role = role;
+        this.role_id = role;
     }
 
     public int getAccount_id() {
@@ -160,17 +160,17 @@ public class Account {
         this.passwordToken = passwordToken;
     }
 
-    public int getRole() {
-        return role;
+    public int getRole_id() {
+        return role_id;
     }
 
-    public void setRole(int role) {
-        this.role = role;
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
     }
 
     @Override
     public String toString() {
-        return "Account{" + "account_id=" + account_id + ", username=" + username + ", password=" + password + ", email=" + email + ", status=" + status + ", gender=" + gender + ", avatar=" + avatar + ", fullname=" + fullname + ", DOB=" + DOB + ", address=" + address + ", phonenumber=" + phonenumber + ", createDate=" + createDate + ", modifyDate=" + modifyDate + ", passwordToken=" + passwordToken + ", role=" + role + '}';
+        return "Account{" + "account_id=" + account_id + ", username=" + username + ", password=" + password + ", email=" + email + ", status=" + status + ", gender=" + gender + ", avatar=" + avatar + ", fullname=" + fullname + ", DOB=" + DOB + ", address=" + address + ", phonenumber=" + phonenumber + ", createDate=" + createDate + ", modifyDate=" + modifyDate + ", passwordToken=" + passwordToken + ", role=" + role_id + '}';
     }
     
     
