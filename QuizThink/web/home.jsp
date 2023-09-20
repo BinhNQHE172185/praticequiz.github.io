@@ -405,7 +405,7 @@
                                                 <i class="fa fa-bank text-primary"></i>
                                             </div>
                                             <h4><a href="#">About us</a></h4>
-                                            <a href="about-1.html" class="btn radius-xl">View More</a>
+                                            <a href="about.jsp" class="btn radius-xl">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -515,7 +515,7 @@
                    
 
                     <!-- Testimonials -->
-                    <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/bg1.jpg);">
+                    <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/fpt1.png);">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 text-white heading-bx left">

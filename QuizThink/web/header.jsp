@@ -13,8 +13,8 @@
                             <div class="topbar-right">
                                 <ul>
 
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="login.jsp">Login</a></li>
+                                    <li><a href="register.jsp">Register</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                     <li class="add-mega-menu"><a href="courses.jsp">Our Courses</a>
 
                                     </li>
-                                    <li><a href="about-1.html;">About us </a>
+                                    <li><a href="about.jsp">About us </a>
 
                                     </li>
 

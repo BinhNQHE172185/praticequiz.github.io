@@ -48,7 +48,7 @@
                                             <h5 class="footer-title">Company</h5>
                                             <ul>
                                                 <li><a href="home.jsp">Home</a></li>
-                                                <li><a href="about-1.html">About</a></li>
+                                                <li><a href="about.jsp">About</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -70,6 +70,7 @@
                                 <div class="widget widget_gallery gallery-grid-4">
                                     <h5 class="footer-title">Our leader</h5>
                                     <span>Nguyen Quy Binh</span>
+                                    <span>binhmebuncha978@gmail.com</span>
                                 </div>
                             </div>
                         </div>
