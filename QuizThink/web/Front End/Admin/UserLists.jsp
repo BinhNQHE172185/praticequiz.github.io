@@ -151,7 +151,7 @@
             <div >
                 <ul>	
                     <c:forEach begin="1" end="${lastPage}" var="i">
-                        <li <c:if test="${i == currentPage}">class="active"</c:if>><a href="store?page=${i}">${i}</a></li>
+                        <li <c:if test="${i == currentPage}">class="active"</c:if>><a href="userlists?page=${i}">${i}</a></li>
                     </c:forEach>
                 </ul>
             </div>
