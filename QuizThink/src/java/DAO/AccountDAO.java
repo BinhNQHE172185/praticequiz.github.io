@@ -53,7 +53,24 @@ public class AccountDAO {
             // For simplicity, it's omitted here.
         }
     }
-    public List<Account> getAllProduct(int page, int condition){
+    
+    // Get number of account
+    public int getNumOfAccount(){
+        String query ="select COUNT(*) from Account";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+    
+    //Get all account
+    public List<Account> getAllAccount(int page){
         List<Account> list = new ArrayList<>();
                     String query = "select * from Account\n" +
                             "ORDER BY account_id\n" +

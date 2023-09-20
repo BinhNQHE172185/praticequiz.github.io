@@ -5,18 +5,23 @@
 
 package Controller.admin;
 
+import DAO.AccountDAO;
+import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
  * @author Dell
  */
-public class UserList extends HttpServlet {
+@WebServlet(name="UserLists", urlPatterns={"/userlists"})
+public class UserLists extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -28,7 +33,23 @@ public class UserList extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        AccountDAO dao = new AccountDAO();
+        int numOfAccount = dao.getNumOfAccount();
+        int lastPage = numOfAccount/15;
+        if(numOfAccount %15 != 0){
+            lastPage ++;
+        }
+        String index = request.getParameter("page");
+        if(index == null){
+            index = "1";
+        }
+        int page = Integer.parseInt(index);
+        List<Account> listAccount = dao.getAllAccount(page);
         
+        request.setAttribute("currentPage", page);
+        request.setAttribute("lastPage", lastPage); 
+        request.setAttribute("listAccount", listAccount);
+        request.getRequestDispatcher("UserLists.jsp").forward(request, response);
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

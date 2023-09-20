@@ -104,33 +104,42 @@
                   <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                          <th>Rendering engine</th>
-                          <th>Browser</th>
-                          <th>Platform(s)</th>
-                          <th>Engine version</th>
-                          <th>CSS grade</th>
+                            <th>Account ID</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Gender</th>
+                            <th>Avatar</th>
+                            <th>Full name</th>
+                            <th>Date of Birth</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th>Create Date</th>
+                            <th>Modify Date</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                          <td>Trident</td>
-                          <td>Internet
-                            Explorer 4.0
-                          </td>
-                          <td>Win 95+</td>
-                          <td> 4</td>
-                          <td>X</td>
-                        </tr>
+                        <c:forEach items = "${listAccount}" var="o" varStatus="status">
+                            <tr>
+                                <td>${o.account_id}</td>
+                                <td>${o.username}</td>
+                                <td>${o.email}</td>
+                                <td>${o.status}</td>
+                                <td>${o.gender}</td>
+                                <td>${o.avatar}</td>
+                                <td>${o.fullname}</td>
+                                <td>${o.DOB}</td>
+                                <td>${o.address}</td>
+                                <td>${o.phonenumber}</td>
+                                <td>${o.createDate}</td>
+                                <td>${o.modifyDate}</td>
+                                <td>${o.passwordToken}</td>
+                                <td>${o.role_id}</td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                          <th>Rendering engine</th>
-                          <th>Browser</th>
-                          <th>Platform(s)</th>
-                          <th>Engine version</th>
-                          <th>CSS grade</th>
-                        </tr>
-                    </tfoot>
                   </table>
                 </div>
                 <!-- /.box-body -->
@@ -139,6 +148,13 @@
             <!-- /.col -->
           </div>
           <!-- /.row -->
+            <div >
+                <ul>	
+                    <c:forEach begin="1" end="${lastPage}" var="i">
+                        <li <c:if test="${i == currentPage}">class="active"</c:if>><a href="store?page=${i}">${i}</a></li>
+                    </c:forEach>
+                </ul>
+            </div>
         </section>
         <!-- /.content -->
     </main>
