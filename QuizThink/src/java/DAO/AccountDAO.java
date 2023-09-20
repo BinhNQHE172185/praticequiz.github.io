@@ -83,4 +83,9 @@ public class AccountDAO {
         }
         return null;
     }
+    public static void main(String[] args) {
+        AccountDAO DAO = new AccountDAO();
+        DAO.createAnyAccount("ABCD", "ABCD", "ABCD", "ABCD", "Female", "ABCD", "ABCD", "03-02-2003", "ABCD", "02036547", 3);
+        
+    }
 }

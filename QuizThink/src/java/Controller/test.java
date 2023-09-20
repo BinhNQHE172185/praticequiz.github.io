@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Controller.admin;
+package Controller;
 
-import DAO.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,14 +12,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.Date;
 
 /**
  *
  * @author Dell
  */
-@WebServlet(name="CreateAccount", urlPatterns={"/createaccount"})
-public class CreateAccount extends HttpServlet {
+@WebServlet(name="test", urlPatterns={"/test"})
+public class test extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,27 +30,18 @@ public class CreateAccount extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        // get parameter to create new account
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String status = request.getParameter("status");
-        String gender = request.getParameter("gender");
-        String avatar = request.getParameter("avatar");
-        String fullname = request.getParameter("fullname");
-        String DOB = request.getParameter("DOB");
-        String address = request.getParameter("address");
-        String phonenumber = request.getParameter("phonenumber");
-        
-        String role = request.getParameter("role");
-        int role_id = Integer.parseInt(role);
-        
-        AccountDAO DAO = new AccountDAO();
-        
-        DAO.createAnyAccount(username, password, email, status, gender, avatar, fullname, DOB, address, phonenumber, role_id);
-        
-        request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
-        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet test</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet test at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -72,7 +72,7 @@
 							<h4>Create User</h4>
 						</div>
 						<div class="widget-inner">
-                                                    <form class="edit-profile m-b30" action="createaccount" method="POST">
+                                                    <form class="edit-profile m-b30" action="/QuizThink/createaccount" method="post">
 								<div class="">
                                                                         <div class="form-group row">
                                                                             <div class="col-sm-10  ml-auto">
