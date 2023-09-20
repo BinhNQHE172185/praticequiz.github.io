@@ -120,15 +120,21 @@
 			<nav class="ttr-sidebar-navi">
 				<ul>
 					<li>
-						<a href="index.html" class="ttr-material-button">
+						<a href="Dashboard.jsp" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-home"></i></span>
 		                	<span class="ttr-label">Dashborad</span>
 		                </a>
 		            </li>
 					<li>
-						<a href="courses.html" class="ttr-material-button">
+						<a href="UserLists.jsp" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-book"></i></span>
 		                	<span class="ttr-label">User List</span>
+		                </a>
+		            </li>
+                            <li>
+						<a href="CreateUser.jsp" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-book"></i></span>
+		                	<span class="ttr-label">Create User</span>
 		                </a>
 		            </li>
 					
