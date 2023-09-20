@@ -23,13 +23,14 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        String status = "Wrong username or password.";
         Account x;
         AccountDAO ad = new AccountDAO();
         
         x = ad.getAccount(username, password);
         
         if(x==null){
+            request.setAttribute("status", status);
             request.getRequestDispatcher("Login.jsp").include(request, response);
         }else{
             response.sendRedirect("index.html");

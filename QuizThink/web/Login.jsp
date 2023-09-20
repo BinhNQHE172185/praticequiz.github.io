@@ -54,7 +54,9 @@
         <!-- STYLESHEETS ============================================= -->
         <link rel="stylesheet" type="text/css" href="Front End/assets/css/style.css">
         <link class="skin" rel="stylesheet" type="text/css" href="Front End/assets/css/color/color-1.css">
-
+        
+        <% String status = (String) request.getAttribute("status"); %>
+        
     </head>
     <body id="bg">
         <div class="page-wraper">
@@ -87,6 +89,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <% if(status !=null){ %>
+                                <div class="col-lg-12" style="padding-bottom: 10px; color: red;">
+                                    <%=
+                                    status
+                                    %>
+                                </div>
+                                <%}%>
+                                
                                 <div class="col-lg-12">
                                     <div class="form-group form-forget">
                                         <div class="custom-control custom-checkbox">
