@@ -23,8 +23,8 @@ public class AccountDAO {
     
     // Create new Account which could be expert marketing sale, customer, membership
     public void createAnyAccount(String username, String password, String email, String status, String gender, String avatar, String fullname, String DOB, String address, String phonenumber, int roleId){
-        String query ="INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [role_id])\n" +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        String query ="INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [modifyDate], [passwordToken], [role_id])\n" +
+"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?);";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -42,7 +42,7 @@ public class AccountDAO {
             LocalDateTime currentTime = LocalDateTime.now();
             Date createdDate = Date.valueOf(currentTime.toLocalDate());
             ps.setDate(11, createdDate);
-            ps.setInt(13, roleId);
+            ps.setInt(12, roleId);
             ps.executeUpdate(); // no result ==> no need result set
         } catch (Exception e) {
             // Handle exceptions here
