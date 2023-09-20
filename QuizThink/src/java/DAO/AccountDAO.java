@@ -11,6 +11,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -51,7 +53,40 @@ public class AccountDAO {
             // For simplicity, it's omitted here.
         }
     }
-    
+    public List<Account> getAllProduct(int page, int condition){
+        List<Account> list = new ArrayList<>();
+                    String query = "select * from Account\n" +
+                            "ORDER BY account_id\n" +
+                            "OFFSET ? ROWS FETCH NEXT 15 ROWS ONLY";
+                    try {
+                        conn = new DBContext().getConnection();
+                        ps = conn.prepareStatement(query);
+                        ps.setInt(1, (page - 1) * 15); //page 1 start 0
+                        rs = ps.executeQuery();
+                        while(rs.next()){
+                            list.add(new Account(
+                                    rs.getInt(1),
+                                    rs.getString(2),
+                                    rs.getString(3),
+                                    rs.getString(4),
+                                    rs.getString(5),
+                                    rs.getString(6),
+                                    rs.getString(7),
+                                    rs.getString(8),
+                                    rs.getDate(9),
+                                    rs.getString(10),
+                                    rs.getString(11),
+                                    rs.getDate(12),
+                                    rs.getDate(13),
+                                    rs.getString(14),
+                                    rs.getInt(15)
+                            ));
+                        }
+                    } catch (Exception e) {
+                        
+                    } 
+                    return null;
+    }
     // Get  Account by ID
     public Account getAccountByID(String Account_ID){
         String query = "select * from Account where account_id = ?";
