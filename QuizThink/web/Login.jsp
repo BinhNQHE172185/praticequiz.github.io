@@ -69,13 +69,13 @@
                             <h2 class="title-head">Login to your <span>Account</span></h2>
                                 <p>Don't have an account? <a href="Register.jsp">Create one here</a></p>
                         </div>	
-                        <form class="contact-bx" action="" method="">
+                        <form class="contact-bx" action="Login" method="POST">
                             <div class="row placeani">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <label>Your email</label>
-                                            <input name="email" type="email" required="" class="form-control">
+                                            <label>Your username</label>
+                                            <input name="username" type="text" required="" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 m-b30">
-                                    <button name="submit" type="submit" value="Submit" class="btn button-md">Login</button>
+                                    <button type="submit" value="Submit" class="btn button-md">Login</button>
                                 </div>
                             </div>
                         </form>

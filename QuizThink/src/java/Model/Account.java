@@ -30,6 +30,29 @@ public class Account {
     public Account() {
     }
 
+    public Account(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public Account(int account_id, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, int role_id) {
+        this.account_id = account_id;
+        this.email = email;
+        this.status = status;
+        this.gender = gender;
+        this.avatar = avatar;
+        this.fullname = fullname;
+        this.DOB = DOB;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.createDate = createDate;
+        this.modifyDate = modifyDate;
+        this.passwordToken = passwordToken;
+        this.role_id = role_id;
+    }
+    
+    
+
     public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, int role) {
         this.account_id = account_id;
         this.username = username;
