@@ -22,25 +22,26 @@ public class AccountDAO extends DBContext {
 
     public Account getAccount(String username, String password) {
         Account x = null;
+        int account_id;
+        String email;
+        String status;
+        String gender;
+        String avatar;
+        String fullname;
+        Date DOB;
+        String address;
+        String phonenumber;
+        Date createDate;
+        Date modifyDate;
+        String passwordToken;
+        int role;
         String sql = "select * from Account\n"
-                + "where username= '" + username + "' and password = '" + password + "'";
+                + "where username = ? and password = ?";
         try {
             PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
-            int account_id;
-            String email;
-            String status;
-            String gender;
-            String avatar;
-            String fullname;
-            Date DOB;
-            String address;
-            String phonenumber;
-            Date createDate;
-            Date modifyDate;
-            String passwordToken;
-            int role;
-
             while (rs.next()) {
                 account_id = rs.getInt("Account_id");
                 email = rs.getString("email");
