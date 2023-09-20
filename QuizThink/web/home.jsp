@@ -588,7 +588,7 @@
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
-                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+                                                <h5><a href="#">Programming Fundamentals</a></h5>
                                                 <span>Programming</span>
                                             </div>
                                             
@@ -601,8 +601,8 @@
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
-                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                <span>Programming</span>
+                                                <h5><a href="#">Mathematics for Engieering</a></h5>
+                                                <span>Mathematics</span>
                                             </div>
                                             
                                         </div>
@@ -614,8 +614,8 @@
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
-                                                <h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-                                                <span>Programming</span>
+                                                <h5><a href="#">Introduction to Computer Science</a></h5>
+                                                <span>Computer Science</span>
                                             </div>
                                             
                                         </div>
