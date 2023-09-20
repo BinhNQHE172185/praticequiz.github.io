@@ -52,7 +52,7 @@ public class AccountDAO extends DBContext {
                 DOB = rs.getDate("DOB");
                 address = rs.getString("address");
                 phonenumber = rs.getString("phonenumber");
-                createDate = rs.getDate("createDate");
+                createDate = rs.getDate("createdDate");
                 modifyDate = rs.getDate("modifyDate");
                 passwordToken = rs.getString("passwordToken");
                 role = rs.getInt("role_id");
