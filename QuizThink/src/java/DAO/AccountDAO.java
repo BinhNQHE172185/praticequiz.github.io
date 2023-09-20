@@ -102,7 +102,7 @@ public class AccountDAO {
                     } catch (Exception e) {
                         
                     } 
-                    return null;
+                    return list;
     }
     // Get  Account by ID
     public Account getAccountByID(String Account_ID){
@@ -136,8 +136,16 @@ public class AccountDAO {
         return null;
     }
     public static void main(String[] args) {
-        AccountDAO DAO = new AccountDAO();
-        DAO.createAnyAccount("ABCD", "ABCD", "ABCD", "ABCD", "Female", "ABCD", "ABCD", "03-02-2003", "ABCD", "02036547", 3);
         
+        try{
+            AccountDAO DAO = new AccountDAO();
+//        DAO.createAnyAccount("ABCD", "ABCD", "ABCD", "ABCD", "Female", "ABCD", "ABCD", "03-02-2003", "ABCD", "02036547", 3);
+        List<Account> list = DAO.getAllAccount(1);
+        for (Account o : list ){
+                System.out.println(o);
+            }
+        }
+        catch (Exception e) {
+        }
     }
 }
