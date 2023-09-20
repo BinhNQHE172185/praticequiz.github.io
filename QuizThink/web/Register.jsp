@@ -118,7 +118,6 @@
         <script src="Front End/assets/vendors/owl-carousel/owl.carousel.js"></script>
         <script src="Front End/assets/js/functions.js"></script>
         <script src="Front End/assets/js/contact.js"></script>
-        <script src='Front End/assets/vendors/switcher/switcher.js'></script>
     </body>
 
 </html>
