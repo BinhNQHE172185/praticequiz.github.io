@@ -25,7 +25,7 @@ public class Account {
     private Date createdDate;
     private Date modifyDate;
     private String passwordToken;
-    private Role role;
+    private int role_id;
 
     public Account() {
     }
@@ -33,25 +33,7 @@ public class Account {
     public Account(String username, String password) {
         this.username = username;
         this.password = password;
-    }
-
-    public Account(int account_id, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, int role_id) {
-        this.account_id = account_id;
-        this.email = email;
-        this.status = status;
-        this.gender = gender;
-        this.avatar = avatar;
-        this.fullname = fullname;
-        this.DOB = DOB;
-        this.address = address;
-        this.phonenumber = phonenumber;
-        this.createDate = createDate;
-        this.modifyDate = modifyDate;
-        this.passwordToken = passwordToken;
-        this.role_id = role_id;
-    }
-    
-    
+    }   
 
     public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, Role role) {
         this.account_id = account_id;
@@ -65,10 +47,10 @@ public class Account {
         this.DOB = DOB;
         this.address = address;
         this.phonenumber = phonenumber;
-        this.createDate = createDate;
+        this.createdDate = createDate;
         this.modifyDate = modifyDate;
         this.passwordToken = passwordToken;
-        this.role_id = role;
+        this.role_id = role_id;
     }
 
     public int getAccount_id() {
@@ -158,12 +140,12 @@ public class Account {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-    public Date getCreateDate() {
-        return createDate;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Date createDate) {
+        this.createdDate = createDate;
     }
 
     public Date getModifyDate() {
@@ -181,13 +163,16 @@ public class Account {
     public void setPasswordToken(String passwordToken) {
         this.passwordToken = passwordToken;
     }
-    public Role getRole() {
-        return role;
+
+    public int getRole_id() {
+        return role_id;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
     }
+    
+    
     
 }
 
