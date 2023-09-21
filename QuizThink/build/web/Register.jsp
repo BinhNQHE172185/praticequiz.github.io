@@ -1,14 +1,12 @@
 <%-- 
-    Document   : Login
-    Created on : Sep 18, 2023, 4:34:53 PM
+    Document   : Register
+    Created on : Sep 18, 2023, 11:04:52 PM
     Author     : LEMONLORD
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
-
 
     <head>
 
@@ -29,7 +27,7 @@
         <meta name="format-detection" content="telephone=no">
 
         <!-- FAVICONS ICON ============================================= -->
-        <link rel="icon" href="Front end/assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="Front End/assets/images/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" type="image/x-icon" href="Front End/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
@@ -55,30 +53,36 @@
         <!-- STYLESHEETS ============================================= -->
         <link rel="stylesheet" type="text/css" href="Front End/assets/css/style.css">
         <link class="skin" rel="stylesheet" type="text/css" href="Front End/assets/css/color/color-1.css">
-        
-        <% String status = (String) request.getAttribute("status"); %>
-        
+
     </head>
     <body id="bg">
         <div class="page-wraper">
             <div id="loading-icon-bx"></div>
             <div class="account-form">
-                <div class="account-head" style="background-image:url(Front end/assets/images/background/bg2.jpg);">
+                <div class="account-head" style="background-image:url(Front End/assets/images/background/bg2.jpg);">
                     <a href="index.html"><img src="Front End/assets/images/Logo2.png" alt=""></a>
                 </div>
                 <div class="account-form-inner">
                     <div class="account-container">
                         <div class="heading-bx left">
-                            <h2 class="title-head">Login to your <span>Account</span></h2>
-                                <p>Don't have an account? <a href="Register.jsp">Create one here</a></p>
+                            <h2 class="title-head">Sign Up <span>Now</span></h2>
+                            <p>Login Your Account <a href="Login.jsp">Click here</a></p>
                         </div>	
-                        <form class="contact-bx" action="Login" method="POST">
+                        <form class="contact-bx">
                             <div class="row placeani">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <label>Your username</label>
-                                            <input name="username" type="text" required="" class="form-control">
+                                            <label>Your Name</label>
+                                            <input name="dzName" type="text" required="" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label>Your Email Address</label>
+                                            <input name="dzName" type="email" required="" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -86,30 +90,12 @@
                                     <div class="form-group">
                                         <div class="input-group"> 
                                             <label>Your Password</label>
-                                            <input name="password" type="password" class="form-control" required="">
+                                            <input name="dzEmail" type="password" class="form-control" required="">
                                         </div>
-                                    </div>
-                                </div>
-                                
-                                <% if(status !=null){ %>
-                                <div class="col-lg-12" style="padding-bottom: 10px; color: red;">
-                                    <%=
-                                    status
-                                    %>
-                                </div>
-                                <%}%>
-                                
-                                <div class="col-lg-12">
-                                    <div class="form-group form-forget">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                            <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
-                                        </div>
-                                        <a href="#" class="ml-auto">Forgot Password?</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 m-b30">
-                                    <button type="submit" class="btn button-md">Login</button>
+                                    <button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
                                 </div>
                             </div>
                         </form>
@@ -135,5 +121,4 @@
     </body>
 
 </html>
-
 
