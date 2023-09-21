@@ -22,10 +22,10 @@ public class Account {
     private Date DOB;
     private String address;
     private String phonenumber;
-    private Date createDate;
+    private Date createdDate;
     private Date modifyDate;
     private String passwordToken;
-    private int role_id;
+    private Role role;
 
     public Account() {
     }
@@ -53,7 +53,7 @@ public class Account {
     
     
 
-    public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, int role) {
+    public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, Role role) {
         this.account_id = account_id;
         this.username = username;
         this.password = password;
@@ -158,7 +158,6 @@ public class Account {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-
     public Date getCreateDate() {
         return createDate;
     }
@@ -182,19 +181,13 @@ public class Account {
     public void setPasswordToken(String passwordToken) {
         this.passwordToken = passwordToken;
     }
-
-    public int getRole_id() {
-        return role_id;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
+    public void setRole(Role role) {
+        this.role = role;
     }
-
-    @Override
-    public String toString() {
-        return "Account{" + "account_id=" + account_id + ", username=" + username + ", password=" + password + ", email=" + email + ", status=" + status + ", gender=" + gender + ", avatar=" + avatar + ", fullname=" + fullname + ", DOB=" + DOB + ", address=" + address + ", phonenumber=" + phonenumber + ", createDate=" + createDate + ", modifyDate=" + modifyDate + ", passwordToken=" + passwordToken + ", role=" + role_id + '}';
-    }
-    
     
 }
+

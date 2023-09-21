@@ -4,6 +4,7 @@
  */
 package Model;
 
+
 /**
  *
  * @author kimdi
@@ -23,6 +24,7 @@ public class SubjectDimension {
 
     public SubjectDimension() {
     }
+
 
     public SubjectDimension(int subjectDimensionId, int parentSdId, int level, String imageURL, String description, float duration, Date startTime, Date endTime, int hasRegistered) {
         this.subjectDimensionId = subjectDimensionId;
@@ -68,14 +70,6 @@ public class SubjectDimension {
         this.imageURL = imageURL;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public float getDuration() {
         return duration;
     }
@@ -100,11 +94,4 @@ public class SubjectDimension {
         this.endTime = endTime;
     }
 
-    public int getHasRegistered() {
-        return hasRegistered;
-    }
-
-    public void setHasRegistered(int hasRegistered) {
-        this.hasRegistered = hasRegistered;
-    }
 }

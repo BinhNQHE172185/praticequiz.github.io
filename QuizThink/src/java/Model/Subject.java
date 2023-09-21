@@ -4,27 +4,11 @@
  */
 package Model;
 
-/**
- *
- * @author kimdi
- */
-import java.util.Date;
 
-public class Subject {
-    private int subjectId;
-    private int expertId;
-    private int subjectDimensionId;
-    private int accountId;
-    private int level;
-    private String imageURL;
-    private String description;
-    private float duration;
-    private Date startTime;
-    private Date endTime;
-    private int hasRegistered;
 
     public Subject() {
     }
+
 
     public Subject(int subjectId, int expertId, int subjectDimensionId, int accountId, int level, String imageURL, String description, float duration, Date startTime, Date endTime, int hasRegistered) {
         this.subjectId = subjectId;
@@ -94,6 +78,7 @@ public class Subject {
 
     public void setDescription(String description) {
         this.description = description;
+
     }
 
     public float getDuration() {
@@ -127,4 +112,5 @@ public class Subject {
     public void setHasRegistered(int hasRegistered) {
         this.hasRegistered = hasRegistered;
     }
+
 }
