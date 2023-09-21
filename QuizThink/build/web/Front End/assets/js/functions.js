@@ -7,7 +7,16 @@ Theme Version:	1.0.0
 ***
 ***
 */
-
+//question detail
+function showExamPopup() {
+    var popup = document.getElementById("examPopup");
+    popup.style.display = "block";
+}
+function closeExamPopup() {
+    var popup = document.getElementById("examPopup");
+    popup.style.display = "none";
+}
+//quiz handle
 var quizCounter = 0;
 
 function toggleEffect(checkbox, limitCheck) {

@@ -7,6 +7,7 @@ package Controller;
 import DAO.QuestionDAO;
 import DAO.SubjectDAO;
 import Model.Question;
+import Model.QuestionDetail;
 import Model.Subject;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,7 +22,7 @@ import java.util.List;
  *
  * @author kimdi
  */
-public class QuestionListServlet extends HttpServlet {
+public class QuestionDetailServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,17 +38,18 @@ public class QuestionListServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            //int subjectId = Integer.parseInt(request.getParameter("subjectId"));
-            int subjectId = 818;
-            
-            SubjectDAO subjectDAO = new SubjectDAO();
+            int questionId = Integer.parseInt(request.getParameter("questionId"));
             QuestionDAO questionDAO = new QuestionDAO();
-            Subject subject = subjectDAO.getSubjectById(subjectId);
-            List<Question> questions = questionDAO.getQuestionsBySubjectId(subjectId);
-            
+            SubjectDAO subjectDAO = new SubjectDAO();
+
+            QuestionDetail questionDetail = questionDAO.getQuestionDetailByQuestionId(questionId);
+            Question question = questionDAO.getQuestionById(questionId);
+            Subject subject = subjectDAO.getSubjectById(question.getSubjectId());
+
+            request.setAttribute("questionDetail", questionDetail);
+            request.setAttribute("question", question);
             request.setAttribute("subject", subject);
-            request.setAttribute("questions", questions);
-            request.getRequestDispatcher("QuestionList.jsp").forward(request, response);
+            request.getRequestDispatcher("QuestionDetail.jsp").forward(request, response);
         }
     }
 
