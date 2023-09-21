@@ -32,8 +32,8 @@
         <meta name="format-detection" content="telephone=no">
 
         <!-- FAVICONS ICON ============================================= -->
-        <link rel="icon" href="Front End/assets/images/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" type="image/x-icon" href="Front End/assets/images/favicon.png" />
+        <link rel="icon" href="FrontEnd/assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" type="image/x-icon" href="FrontEnd/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
         <title>EduChamp : Education HTML Template </title>
@@ -42,22 +42,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--[if lt IE 9]>
-        <script src="Front End/assets/js/html5shiv.min.js"></script>
-        <script src="Front End/assets/js/respond.min.js"></script>
+        <script src="FrontEnd/assets/js/html5shiv.min.js"></script>
+        <script src="FrontEnd/assets/js/respond.min.js"></script>
         <![endif]-->
 
         <!-- All PLUGINS CSS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/assets.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/assets.css">
 
         <!-- TYPOGRAPHY ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/typography.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/typography.css">
 
         <!-- SHORTCODES ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/shortcodes/shortcodes.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/shortcodes/shortcodes.css">
 
         <!-- STYLESHEETS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/style.css">
-        <link class="skin" rel="stylesheet" type="text/css" href="Front End/assets/css/color/color-1.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/style.css">
+        <link class="skin" rel="stylesheet" type="text/css" href="FrontEnd/assets/css/color/color-1.css">
 
     </head>
     <body id="bg">
@@ -70,7 +70,7 @@
             %>
             <div class="page-content bg-white">
                 <!-- inner page banner -->
-                <div class="page-banner ovbl-dark" style="background-image:url(Front End/assets/images/banner/banner3.jpg);">
+                <div class="page-banner ovbl-dark" style="background-image:url(FrontEnd/assets/images/banner/banner3.jpg);">
                     <div class="container">
                         <div class="page-banner-entry">
                             <h1 class="text-white"><%= subject.getDescription() %></h1>
@@ -106,13 +106,13 @@
                                         </div>
                                     </div>
                                     <div class="widget">
-                                        <a href="#"><img src="Front End/assets/images/adv/adv.jpg" alt=""/></a>
+                                        <a href="#"><img src="FrontEnd/assets/images/adv/adv.jpg" alt=""/></a>
                                     </div>
                                     <div class="widget recent-posts-entry widget-courses">
                                         <h5 class="widget-title style-1">Recent Subject</h5>
                                         <div class="widget-post-bx">
                                             <div class="widget-post clearfix">
-                                                <div class="ttr-post-media"> <img src="Front End/assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
+                                                <div class="ttr-post-media"> <img src="FrontEnd/assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
                                                 <div class="ttr-post-info">
                                                     <div class="ttr-post-header">
                                                         <h6 class="post-title"><a href="#">Introduction EduChamp</a></h6>
@@ -125,7 +125,7 @@
                                                 </div>
                                             </div>
                                             <div class="widget-post clearfix">
-                                                <div class="ttr-post-media"> <img src="Front End/assets/images/blog/recent-blog/pic3.jpg" width="200" height="160" alt=""> </div>
+                                                <div class="ttr-post-media"> <img src="FrontEnd/assets/images/blog/recent-blog/pic3.jpg" width="200" height="160" alt=""> </div>
                                                 <div class="ttr-post-info">
                                                     <div class="ttr-post-header">
                                                         <h6 class="post-title"><a href="#">English For Tommorow</a></h6>
@@ -252,21 +252,21 @@
             <button class="back-to-top fa fa-chevron-up" ></button>
         </div>
         <!-- External JavaScripts -->
-        <script src="Front End/assets/js/jquery.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap/js/popper.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-        <script src="Front End/assets/vendors/magnific-popup/magnific-popup.js"></script>
-        <script src="Front End/assets/vendors/counter/waypoints-min.js"></script>
-        <script src="Front End/assets/vendors/counter/counterup.min.js"></script>
-        <script src="Front End/assets/vendors/imagesloaded/imagesloaded.js"></script>
-        <script src="Front End/assets/vendors/masonry/masonry.js"></script>
-        <script src="Front End/assets/vendors/masonry/filter.js"></script>
-        <script src="Front End/assets/vendors/owl-carousel/owl.carousel.js"></script>
-        <script src="Front End/assets/js/functions.js"></script>
-        <script src="Front End/assets/js/contact.js"></script>
-        <script src='Front End/assets/vendors/switcher/switcher.js'></script>
+        <script src="FrontEnd/assets/js/jquery.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/popper.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+        <script src="FrontEnd/assets/vendors/magnific-popup/magnific-popup.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/waypoints-min.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/counterup.min.js"></script>
+        <script src="FrontEnd/assets/vendors/imagesloaded/imagesloaded.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/masonry.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/filter.js"></script>
+        <script src="FrontEnd/assets/vendors/owl-carousel/owl.carousel.js"></script>
+        <script src="FrontEnd/assets/js/functions.js"></script>
+        <script src="FrontEnd/assets/js/contact.js"></script>
+        <script src='FrontEnd/assets/vendors/switcher/switcher.js'></script>
     </body>
 
 </html>

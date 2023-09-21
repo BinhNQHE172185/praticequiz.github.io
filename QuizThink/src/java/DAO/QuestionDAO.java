@@ -4,12 +4,12 @@
  */
 package DAO;
 
+import DAL.DBContext;
 import Model.Question;
 import Model.QuestionDetail;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +17,14 @@ import java.util.List;
  *
  * @author kimdi
  */
-public class QuestionDAO extends BaseDAO {
+public class QuestionDAO extends DBContext {
 
     public Question getQuestionById(int questionId) {
         String sql = "SELECT * FROM Question WHERE Question_id = ?";
         Question question = null;
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, questionId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -46,7 +46,7 @@ public class QuestionDAO extends BaseDAO {
 
                 question = new Question(questionId, subjectId, accountId, title, imageURL, level, duration, startTime, endTime, status, rate, hasJoin, createdDate, modifyDate, description);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class QuestionDAO extends BaseDAO {
         List<Question> questions = new ArrayList<>();
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, subjectId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -82,7 +82,7 @@ public class QuestionDAO extends BaseDAO {
 
                 questions.add(question);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }
@@ -94,7 +94,7 @@ public class QuestionDAO extends BaseDAO {
         List<QuestionDetail> questionDetails = new ArrayList<>();
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, questionId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -107,7 +107,7 @@ public class QuestionDAO extends BaseDAO {
 
                 questionDetails.add(questionDetail);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }
@@ -118,7 +118,7 @@ public class QuestionDAO extends BaseDAO {
         QuestionDetail questionDetail = null;
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, questionId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -129,7 +129,7 @@ public class QuestionDAO extends BaseDAO {
 
                 questionDetail = new QuestionDetail(questionDetailId, questionId, description, imageURL);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }

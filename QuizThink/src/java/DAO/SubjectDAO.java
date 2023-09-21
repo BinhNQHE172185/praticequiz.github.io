@@ -4,24 +4,24 @@
  */
 package DAO;
 
+import DAL.DBContext;
 import Model.Subject;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  *
  * @author kimdi
  */
-public class SubjectDAO extends BaseDAO {
+public class SubjectDAO extends DBContext {
 
     public Subject getSubjectById(int subjectId) {
         String sql = "SELECT * FROM Subject WHERE subject_Id = ?";
         Subject subject = null;
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, subjectId);
             ResultSet resultSet = statement.executeQuery();
 
@@ -39,7 +39,7 @@ public class SubjectDAO extends BaseDAO {
 
                 subject = new Subject(subjectId, expertId, subjectDimensionId, accountId, level, imageURL, description, duration, startTime, endTime, hasRegistered);
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }

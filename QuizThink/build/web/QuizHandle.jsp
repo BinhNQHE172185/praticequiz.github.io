@@ -27,8 +27,8 @@
         <meta name="format-detection" content="telephone=no">
 
         <!-- FAVICONS ICON ============================================= -->
-        <link rel="icon" href="Front End/assets/images/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" type="image/x-icon" href="Front End/Front End/assets/images/favicon.png" />
+        <link rel="icon" href="FrontEnd/assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" type="image/x-icon" href="FrontEnd/FrontEnd/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
         <title>EduChamp : Education HTML Template </title>
@@ -37,24 +37,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--[if lt IE 9]>
-<script src="Front End/assets/js/html5shiv.min.js"></script>
-<script src="Front End/assets/js/respond.min.js"></script>
+<script src="FrontEnd/assets/js/html5shiv.min.js"></script>
+<script src="FrontEnd/assets/js/respond.min.js"></script>
 <![endif]-->
 
         <!-- All PLUGINS CSS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/assets.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/assets.css">
 
         <!-- TYPOGRAPHY ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/typography.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/typography.css">
 
         <!-- SHORTCODES ============================================= -->
         <link rel="stylesheet" type="text/css"
-              href="Front End/assets/css/shortcodes/shortcodes.css">
+              href="FrontEnd/assets/css/shortcodes/shortcodes.css">
 
         <!-- STYLESHEETS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="Front End/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/style.css">
         <link class="skin" rel="stylesheet" type="text/css"
-              href="Front End/assets/css/color/color-1.css">
+              href="FrontEnd/assets/css/color/color-1.css">
 
     </head>
     <body id="bg">
@@ -67,7 +67,7 @@
                         <div class="container clearfix">
                             <!-- Header Logo ==== -->
                             <div class="menu-logo">
-                                <a href="index.html"><img src="Front End/assets/images/logo.png" alt></a>
+                                <a href="index.html"><img src="FrontEnd/assets/images/logo.png" alt></a>
                             </div>
                             <!-- Mobile Nav Button ==== -->
                             <button class="navbar-toggler collapsed menuicon justify-content-end"
@@ -91,7 +91,7 @@
                             <div class="menu-links navbar-collapse collapse justify-content-start"
                                  id="menuDropdown">
                                 <div class="menu-logo">
-                                    <a href="index.html"><img src="Front End/assets/images/logo.png" alt></a>
+                                    <a href="index.html"><img src="FrontEnd/assets/images/logo.png" alt></a>
                                 </div>
                                 <ul class="nav navbar-nav quiz-handle-nav">
                                     <h3 class="question-title">Chapter 1</h3>
@@ -287,21 +287,21 @@
             <button class="back-to-top fa fa-chevron-up"></button>
         </div>
         <!-- External JavaScripts -->
-        <script src="Front End/assets/js/jquery.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap/js/popper.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-        <script src="Front End/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-        <script src="Front End/assets/vendors/magnific-popup/magnific-popup.js"></script>
-        <script src="Front End/assets/vendors/counter/waypoints-min.js"></script>
-        <script src="Front End/assets/vendors/counter/counterup.min.js"></script>
-        <script src="Front End/assets/vendors/imagesloaded/imagesloaded.js"></script>
-        <script src="Front End/assets/vendors/masonry/masonry.js"></script>
-        <script src="Front End/assets/vendors/masonry/filter.js"></script>
-        <script src="Front End/assets/vendors/owl-carousel/owl.carousel.js"></script>
-        <script src="Front End/assets/js/functions.js"></script>
-        <script src="Front End/assets/js/contact.js"></script>
-        <script src='Front End/assets/vendors/switcher/switcher.js'></script>
+        <script src="FrontEnd/assets/js/jquery.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/popper.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+        <script src="FrontEnd/assets/vendors/magnific-popup/magnific-popup.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/waypoints-min.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/counterup.min.js"></script>
+        <script src="FrontEnd/assets/vendors/imagesloaded/imagesloaded.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/masonry.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/filter.js"></script>
+        <script src="FrontEnd/assets/vendors/owl-carousel/owl.carousel.js"></script>
+        <script src="FrontEnd/assets/js/functions.js"></script>
+        <script src="FrontEnd/assets/js/contact.js"></script>
+        <script src='FrontEnd/assets/vendors/switcher/switcher.js'></script>
     </body>
 
 </html>

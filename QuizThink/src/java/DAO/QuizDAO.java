@@ -4,10 +4,10 @@
  */
 package DAO;
 
+import DAL.DBContext;
 import Model.Quiz;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,13 +15,13 @@ import java.util.List;
  *
  * @author kimdi
  */
-public class QuizDAO extends BaseDAO{
+public class QuizDAO extends DBContext{
     public List<Quiz> getQuizzesByQuestionId(int questionId) {
     String sql = "SELECT * FROM Quiz WHERE Question_id = ?";
     List<Quiz> quizzes = new ArrayList<>();
 
     try {
-        PreparedStatement statement = connection.prepareStatement(sql);
+        PreparedStatement statement = getConnection().prepareStatement(sql);
         statement.setInt(1, questionId);
         ResultSet resultSet = statement.executeQuery();
 
@@ -35,7 +35,7 @@ public class QuizDAO extends BaseDAO{
 
             quizzes.add(quiz);
         }
-    } catch (SQLException ex) {
+    } catch (Exception ex) {
         System.err.println("An error occurred while executing the query: " + ex.getMessage());
         ex.printStackTrace();
     }

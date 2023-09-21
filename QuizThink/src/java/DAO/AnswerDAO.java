@@ -1,5 +1,6 @@
 package DAO;
 
+import DAL.DBContext;
 import Model.Answer;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,13 +17,13 @@ import java.util.List;
  *
  * @author kimdi
  */
-public class AnswerDAO extends BaseDAO{
+public class AnswerDAO extends DBContext{
     public List<Answer> getAnswersByQuizId(int quizId) {
     String sql = "SELECT * FROM Answer WHERE Quiz_id = ?";
     List<Answer> answers = new ArrayList<>();
 
     try {
-        PreparedStatement statement = connection.prepareStatement(sql);
+        PreparedStatement statement = getConnection().prepareStatement(sql);
         statement.setInt(1, quizId);
         ResultSet resultSet = statement.executeQuery();
 
@@ -35,7 +36,7 @@ public class AnswerDAO extends BaseDAO{
 
             answers.add(answer);
         }
-    } catch (SQLException ex) {
+    } catch (Exception ex) {
         System.err.println("An error occurred while executing the query: " + ex.getMessage());
         ex.printStackTrace();
     }
