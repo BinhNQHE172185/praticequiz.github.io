@@ -4,14 +4,14 @@
  */
 package Model;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
- * @author admin
+ * @author LEMONLORD
  */
 public class Account {
-    private int accountID;
+    private int account_id;
     private String username;
     private String password;
     private String email;
@@ -30,8 +30,31 @@ public class Account {
     public Account() {
     }
 
-    public Account(int accountID, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createdDate, Date modifyDate, String passwordToken, Role role) {
-        this.accountID = accountID;
+    public Account(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public Account(int account_id, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, int role_id) {
+        this.account_id = account_id;
+        this.email = email;
+        this.status = status;
+        this.gender = gender;
+        this.avatar = avatar;
+        this.fullname = fullname;
+        this.DOB = DOB;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.createDate = createDate;
+        this.modifyDate = modifyDate;
+        this.passwordToken = passwordToken;
+        this.role_id = role_id;
+    }
+    
+    
+
+    public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, Role role) {
+        this.account_id = account_id;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -42,18 +65,18 @@ public class Account {
         this.DOB = DOB;
         this.address = address;
         this.phonenumber = phonenumber;
-        this.createdDate = createdDate;
+        this.createDate = createDate;
         this.modifyDate = modifyDate;
         this.passwordToken = passwordToken;
-        this.role = role;
+        this.role_id = role;
     }
 
-    public int getAccountID() {
-        return accountID;
+    public int getAccount_id() {
+        return account_id;
     }
 
-    public void setAccountID(int accountID) {
-        this.accountID = accountID;
+    public void setAccount_id(int account_id) {
+        this.account_id = account_id;
     }
 
     public String getUsername() {
@@ -135,13 +158,12 @@ public class Account {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-
-    public Date getCreatedDate() {
-        return createdDate;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     public Date getModifyDate() {
@@ -159,7 +181,6 @@ public class Account {
     public void setPasswordToken(String passwordToken) {
         this.passwordToken = passwordToken;
     }
-
     public Role getRole() {
         return role;
     }
@@ -169,3 +190,4 @@ public class Account {
     }
     
 }
+

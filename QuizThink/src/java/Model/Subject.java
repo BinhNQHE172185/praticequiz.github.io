@@ -4,48 +4,56 @@
  */
 package Model;
 
-import java.util.Date;
 
-/**
- *
- * @author admin
- */
-public class Subject {
-    private int subjectID;
-    private int level;
-    private String image;
-    private String discription;
-    private float duration;
-    private Date startTime;
-    private Date endTime;
-    private int hasRegisted;
-    private Expert expert;
-    private SubjectDimension subjectDimension;
-    private Account account;
 
     public Subject() {
     }
 
-    public Subject(int subjectID, int level, String image, String discription, float duration, Date startTime, Date endTime, int hasRegisted, Expert expert, SubjectDimension subjectDimension, Account account) {
-        this.subjectID = subjectID;
+
+    public Subject(int subjectId, int expertId, int subjectDimensionId, int accountId, int level, String imageURL, String description, float duration, Date startTime, Date endTime, int hasRegistered) {
+        this.subjectId = subjectId;
+        this.expertId = expertId;
+        this.subjectDimensionId = subjectDimensionId;
+        this.accountId = accountId;
         this.level = level;
-        this.image = image;
-        this.discription = discription;
+        this.imageURL = imageURL;
+        this.description = description;
         this.duration = duration;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.hasRegisted = hasRegisted;
-        this.expert = expert;
-        this.subjectDimension = subjectDimension;
-        this.account = account;
+        this.hasRegistered = hasRegistered;
     }
 
-    public int getSubjectID() {
-        return subjectID;
+    public int getSubjectId() {
+        return subjectId;
     }
 
-    public void setSubjectID(int subjectID) {
-        this.subjectID = subjectID;
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public int getExpertId() {
+        return expertId;
+    }
+
+    public void setExpertId(int expertId) {
+        this.expertId = expertId;
+    }
+
+    public int getSubjectDimensionId() {
+        return subjectDimensionId;
+    }
+
+    public void setSubjectDimensionId(int subjectDimensionId) {
+        this.subjectDimensionId = subjectDimensionId;
+    }
+
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
     public int getLevel() {
@@ -56,20 +64,21 @@ public class Subject {
         this.level = level;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
+
     }
 
     public float getDuration() {
@@ -96,36 +105,12 @@ public class Subject {
         this.endTime = endTime;
     }
 
-    public int getHasRegisted() {
-        return hasRegisted;
+    public int getHasRegistered() {
+        return hasRegistered;
     }
 
-    public void setHasRegisted(int hasRegisted) {
-        this.hasRegisted = hasRegisted;
+    public void setHasRegistered(int hasRegistered) {
+        this.hasRegistered = hasRegistered;
     }
 
-    public Expert getExpert() {
-        return expert;
-    }
-
-    public void setExpert(Expert expert) {
-        this.expert = expert;
-    }
-
-    public SubjectDimension getSubjectDimension() {
-        return subjectDimension;
-    }
-
-    public void setSubjectDimension(SubjectDimension subjectDimension) {
-        this.subjectDimension = subjectDimension;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-    
 }

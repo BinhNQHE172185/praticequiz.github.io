@@ -4,44 +4,54 @@
  */
 package Model;
 
-import java.util.Date;
 
 /**
  *
- * @author admin
+ * @author kimdi
  */
+import java.util.Date;
+
 public class SubjectDimension {
-    private int subjectDimensionID;
+    private int subjectDimensionId;
+    private int parentSdId;
     private int level;
     private String imageURL;
-    private String discription;
+    private String description;
     private float duration;
     private Date startTime;
     private Date endTime;
-    private int hasRegisted;
-    private SubjectDimension parentSDID;
+    private int hasRegistered;
 
     public SubjectDimension() {
     }
 
-    public SubjectDimension(int subjectDimensionID, int level, String imageURL, String discription, float duration, Date startTime, Date endTime, int hasRegisted, SubjectDimension parentSDID) {
-        this.subjectDimensionID = subjectDimensionID;
+
+    public SubjectDimension(int subjectDimensionId, int parentSdId, int level, String imageURL, String description, float duration, Date startTime, Date endTime, int hasRegistered) {
+        this.subjectDimensionId = subjectDimensionId;
+        this.parentSdId = parentSdId;
         this.level = level;
         this.imageURL = imageURL;
-        this.discription = discription;
+        this.description = description;
         this.duration = duration;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.hasRegisted = hasRegisted;
-        this.parentSDID = parentSDID;
+        this.hasRegistered = hasRegistered;
     }
 
-    public int getSubjectDimensionID() {
-        return subjectDimensionID;
+    public int getSubjectDimensionId() {
+        return subjectDimensionId;
     }
 
-    public void setSubjectDimensionID(int subjectDimensionID) {
-        this.subjectDimensionID = subjectDimensionID;
+    public void setSubjectDimensionId(int subjectDimensionId) {
+        this.subjectDimensionId = subjectDimensionId;
+    }
+
+    public int getParentSdId() {
+        return parentSdId;
+    }
+
+    public void setParentSdId(int parentSdId) {
+        this.parentSdId = parentSdId;
     }
 
     public int getLevel() {
@@ -58,14 +68,6 @@ public class SubjectDimension {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
-    }
-
-    public String getDiscription() {
-        return discription;
-    }
-
-    public void setDiscription(String discription) {
-        this.discription = discription;
     }
 
     public float getDuration() {
@@ -92,21 +94,4 @@ public class SubjectDimension {
         this.endTime = endTime;
     }
 
-    public int getHasRegisted() {
-        return hasRegisted;
-    }
-
-    public void setHasRegisted(int hasRegisted) {
-        this.hasRegisted = hasRegisted;
-    }
-
-    public SubjectDimension getParentSDID() {
-        return parentSDID;
-    }
-
-    public void setParentSDID(SubjectDimension parentSDID) {
-        this.parentSDID = parentSDID;
-    }
-    
-    
 }
