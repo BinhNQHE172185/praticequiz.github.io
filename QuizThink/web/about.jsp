@@ -26,7 +26,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 	
 	<!-- PAGE TITLE HERE ============================================= -->
-	<title>QUIZZ THINK-Online quiz practice web </title>
+	<title>QUIZ THINK-Online quiz practice web </title>
 	
 	<!-- MOBILE SPECIFIC ============================================= -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -180,7 +180,7 @@
                             <div class="col-lg-3 col-md-6 col-sm-6 col-6 m-b30">
                                 <div class="counter-style-1">
 									<div class="text-black">
-										<span class="counter">100</span><span>+</span>
+										<span class="counter">400</span><span>+</span>
 									</div>
 									<span class="counter-text">Quizzes</span>
 								</div>

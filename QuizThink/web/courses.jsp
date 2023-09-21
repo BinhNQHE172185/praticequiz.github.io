@@ -28,7 +28,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
-        <title>QUIZZ THINK-Online Quiz Practice Web </title>
+        <title>QUIZ THINK-Online Quiz Practice Web </title>
 
         <!-- MOBILE SPECIFIC ============================================= -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,7 +62,7 @@
             <!-- Content -->
             <div class="page-content bg-white">
                 <!-- inner page banner -->
-                <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner3.jpg);">
+                <div class="page-banner ovbl-dark" style="background-image:url(assets/images/background/fpt1.png);">
                     <div class="container">
                         <div class="page-banner-entry">
                             <h1 class="text-white">Our Courses</h1>
@@ -116,15 +116,7 @@
                                 <div class="ttr-post-header">
                                     <h6 class="post-title"><a href="#">Introduction EduChamp</a></h6>
                                 </div>
-                                <div class="ttr-post-meta">
-                                    <ul>
-                                        <li class="price">
-											<del>$190</del>
-											<h5>$120</h5>
-										</li>
-                                        <li class="review">03 Review</li>
-                                    </ul>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="widget-post clearfix">
@@ -133,14 +125,7 @@
                                 <div class="ttr-post-header">
                                     <h6 class="post-title"><a href="#">English For Tommorow</a></h6>
                                 </div>
-                                <div class="ttr-post-meta">
-                                    <ul>
-                                        <li class="price">
-											<h5 class="free">Free</h5>
-										</li>
-                                        <li class="review">07 Review</li>
-                                    </ul>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

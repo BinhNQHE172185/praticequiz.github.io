@@ -27,7 +27,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
-        <title>QUIZZ THINK-Online Quiz Practice Web </title>
+        <title>QUIZ THINK-Online Quiz Practice Web </title>
 
         <!-- MOBILE SPECIFIC ============================================= -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
