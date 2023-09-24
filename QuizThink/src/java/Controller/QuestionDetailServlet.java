@@ -4,17 +4,21 @@
  */
 package Controller;
 
+import DAO.AnswerDAO;
 import DAO.QuestionDAO;
+import DAO.QuizDAO;
 import DAO.SubjectDAO;
+import Model.Answer;
 import Model.Question;
+import Model.Quiz;
 import Model.Subject;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,12 +44,20 @@ public class QuestionDetailServlet extends HttpServlet {
             int questionId = Integer.parseInt(request.getParameter("questionId"));
             QuestionDAO questionDAO = new QuestionDAO();
             SubjectDAO subjectDAO = new SubjectDAO();
+            QuizDAO quizDAO = new QuizDAO();
+            AnswerDAO answerDAO = new AnswerDAO();
 
             Question question = questionDAO.getQuestionById(questionId);
             Subject subject = subjectDAO.getSubjectById(question.getSubjectId());
+            List<Quiz> quizzes = quizDAO.getQuizzesByQuestionId(questionId);
+            for (Quiz quizz : quizzes) {
+                List<Answer> answers = answerDAO.getAnswersByQuizId(quizz.getQuizId());
+                request.setAttribute("answers" + quizz.getQuizId(), answers);
 
+            }
             request.setAttribute("question", question);
             request.setAttribute("subject", subject);
+            request.setAttribute("quizzes", quizzes);
             request.getRequestDispatcher("QuestionDetail.jsp").forward(request, response);
         }
     }

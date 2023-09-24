@@ -162,9 +162,10 @@
                                                     </div>
                                                     <div class="cours-more-info">
                                                         <div class="review">
-                                                            <span>was status-review count</span>
+                                                            <span>Requirement:</span>
+                                                            <span><%= question.getRequirement() %>%</span>
                                                         </div>
-                                                        <div class="review">
+                                                        <div class="review"><!-- show current progress, show passed + icon if completed-->
                                                             <h5>Passed</h5>
                                                             <i class="fa fa-check"></i>
                                                         </div>

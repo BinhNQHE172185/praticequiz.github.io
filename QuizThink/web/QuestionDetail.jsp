@@ -6,9 +6,13 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="Model.Account" %>
+<%@ page import="Model.Answer" %>
+<%@ page import="Model.Quiz" %>
 <%@ page import="Model.Question" %>
 <%@ page import="Model.Subject" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,7 +77,7 @@
                 <div class="page-banner ovbl-dark" style="background-image:url(FrontEnd/assets/images/banner/banner3.jpg);">
                     <div class="container">
                         <div class="page-banner-entry">
-                            <h1 class="text-white"><%= subject.getDescription() %></h1>
+                            <h1 class="text-white"><%= subject.getTitle() %></h1>
                         </div>
                     </div>
                 </div>
@@ -85,7 +89,7 @@
                             <li>Science</li>
                             <li>Computer science</li>
                             <li>Software Engineering</li>
-                            <li><%= subject.getDescription() %></li>
+                            <li><%= subject.getTitle() %></li>
                         </ul>
                     </div>
                 </div>
@@ -141,20 +145,25 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-sm-12">
-                                    <div class="row"><h4>Question list:</h4></div>
+                                    <!-- Breadcrumb row -->
+                                    <div class="breadcrumb-row">
+                                        <div class="container">
+                                            <ul class="list-inline">
+                                                <li><a href="#">Home</a></li>
+                                                <li>Science</li>
+                                                <li>Computer science</li>
+                                                <li>Software Engineering</li>
+                                                <li><%= subject.getTitle() %></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Breadcrumb row END -->
                                     <div class="row">
-                                        <!-- Question list display-->
+                                        <!-- Question detail display-->
                                         <%
                                         Question question = (Question)request.getAttribute("question");
 
                                         if (question != null) {
-                                                int rate = question.getRate();
-
-                                                // Calculate the number of full stars
-                                                int fullStars = rate / 2;
-
-                                                // Calculate the remaining half star
-                                                boolean hasHalfStar = rate % 2 == 1;
                                         %>
                                         <div class="col-md-12 col-lg-12 col-sm-12 m-b30">
                                             <div class="cours-bx detail">
@@ -171,11 +180,12 @@
                                                     <div class="exam-popup-content">
                                                         <button class="submit-btn quit" onclick="closeExamPopup()">X</button>
                                                         <h3>Exam Information</h3>
-                                                        <h5>Level: <%= question.getLevel() %></h5>
-                                                        <h5>Duration: min, hour</h5>
-                                                        <h5>50 quiz</h5>
+                                                        <h5><%= question.getQuizCount() %> quiz</h5>
+                                                        <h5>Duration: <%= question.getDuration() %></h5>
+                                                        <h5>Higher than <%= question.getRequirement() %>% to pass</h5>
+
                                                         <!-- Add exam information here -->
-                                                        <form action="exam-servlet-url" method="POST">
+                                                        <form class = "text-center m-t20" action="exam-servlet-url" method="POST">
                                                             <input type="hidden" name="questionId" value="your-questionId-value">
                                                             <button type="submit" class="submit-btn detail">Start Exam</button>
                                                         </form>
@@ -183,38 +193,20 @@
                                                 </div>
                                                 <!-- The Exam Popup END-->
                                                 <div class="info-bx text-left detail">
-                                                    <h5><%= question.getTitle() %></h5>
-                                                    <span>Level: <%= question.getLevel() %></span>
+                                                    <h5><%= question.getTitle() %><%= question.getQuestionId() %></h5>
+                                                    <br>
+                                                    <span><%= question.getQuizCount() %> quiz</span>
                                                     <br>
                                                     <span>Duration: <%= question.getDuration() %></span>
+                                                    <br>
+                                                    <span>Requirement: <%= question.getRequirement() %>%</span>
                                                     <br>
                                                     <span>Created Date: <%= question.getCreatedDate() %></span>
                                                     <br>
                                                     <p>Description: <%= question.getDescription() %></p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 col-sm-12 cours-more-info">
-                                                    <div class="review">
-                                                        <span><%= question.getStatus() %> Review</span>
-                                                        <ul class="cours-star">
-                                                            <% for (int i = 0; i < fullStars; i++) { %>
-                                                            <li class="active">
-                                                                <i class="fa fa-star"></i>
-                                                            </li>
-                                                            <% } %>
-                                                            <% if (hasHalfStar) { %>
-                                                            <li class="active">
-                                                                <i class="fa fa-star-half-o"></i>
-                                                            </li>
-                                                            <% fullStars++; %>
-                                                            <% } %>
-                                                            <% for (int i = fullStars; i < 5; i++) { %>
-                                                            <li>
-                                                                <i class="fa fa-star"></i>
-                                                            </li>
-                                                            <% } %>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
+                                                    <div class="review"><!-- show current progress, show passed + icon if completed-->
                                                         <h5>Passed</h5>
                                                         <i class="fa fa-check"></i>
                                                     </div>
@@ -224,10 +216,78 @@
                                         <%
                                             } else {
                                         %>
-                                        <p>No questions found.</p>
+                                        <p>No info</p>
                                         <%
                                             }
                                         %>
+                                    </div>
+                                    <!-- Question detail display END-->
+
+                                    <div class="row"><h4>Quizzes list:</h4></div>
+                                    <div class="row">
+                                        <!-- Question list display-->
+                                        <%
+                                        List<Quiz> quizzes = (List<Quiz>) request.getAttribute("quizzes");
+
+                                        if (quizzes != null && !quizzes.isEmpty()) {
+                                            for (Quiz quiz : quizzes) {
+                                        %>
+                                        <div class="col-md-12 col-lg-12 col-sm-12 m-b30">
+                                            <div class="cours-bx">
+                                                <div id="quiz<%= quiz.getQuizId() %>">
+                                                    <div class="info-bx text-left">
+                                                        <h5>Question <%= quiz.getQuizId() %>: <%= quiz.getContent() %></h5>
+                                                        <%
+                                                        if (quiz.getType() == 0) {
+                                                        %>
+                                                        <span>Select all that apply</span>
+                                                        <%
+                                                        } else {
+                                                        %>
+                                                        <span>Select <%= quiz.getType() %> that apply</span>
+                                                        <%
+                                                        }
+                                                        %>
+                                                    </div>
+                                                    <div class="cours-more-info">
+                                                        <div class="review col-md-12 col-lg-12 col-sm-12">
+                                                            <ul class="option">
+                                                                <%
+                                                                List<Answer> answers = (List<Answer>) request.getAttribute("answers" + quiz.getQuizId());
+                                                                
+                                                                if (answers != null && !answers.isEmpty()) {
+                                                                    for (Answer answer : answers) {
+                                                                %>
+                                                                <li>
+                                                                    <input type="checkbox" name="quiz<%= quiz.getQuizId() %>" id="choice<%= answer.getAnswerId() %>"
+                                                                           onclick="toggleEffect(this,<%= quiz.getType() %>)">
+                                                                    <label for="choice<%= answer.getAnswerId() %>">
+                                                                        <h5><%= answer.getContent() %></h5>
+                                                                    </label>
+                                                                </li>
+                                                                <%
+                                                                    }
+                                                                } else {
+                                                                %>
+                                                                <p>No answer found.</p>
+                                                                <%
+                                                                }
+                                                                %>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        } else {
+                                        %>
+                                        <p>No quizzes found.</p>
+                                        <%
+                                        }
+                                        %>
+                                        <!-- Question list display END-->
                                         <div class="col-lg-12 m-b20">
                                             <div class="pagination-bx rounded-sm gray clearfix">
                                                 <ul class="pagination">
