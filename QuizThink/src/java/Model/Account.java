@@ -15,42 +15,35 @@ public class Account {
     private String username;
     private String password;
     private String email;
-    private String status;
-    private String gender;
-    private String avatar;
     private String fullname;
     private Date DOB;
-    private String address;
-    private String phonenumber;
+    private String gender;
+    private String selfIntroduction;
+    private String avatar;
     private Date createdDate;
     private Date modifyDate;
     private String passwordToken;
     private int role_id;
+    private boolean status;
 
     public Account() {
     }
 
-    public Account(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }   
-
-    public Account(int account_id, String username, String password, String email, String status, String gender, String avatar, String fullname, Date DOB, String address, String phonenumber, Date createDate, Date modifyDate, String passwordToken, Role role) {
+    public Account(int account_id, String username, String password, String email, String fullname, Date DOB, String gender, String selfIntroduction, String avatar, Date createdDate, Date modifyDate, String passwordToken, int role_id, boolean status) {
         this.account_id = account_id;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.status = status;
-        this.gender = gender;
-        this.avatar = avatar;
         this.fullname = fullname;
         this.DOB = DOB;
-        this.address = address;
-        this.phonenumber = phonenumber;
-        this.createdDate = createDate;
+        this.gender = gender;
+        this.selfIntroduction = selfIntroduction;
+        this.avatar = avatar;
+        this.createdDate = createdDate;
         this.modifyDate = modifyDate;
         this.passwordToken = passwordToken;
         this.role_id = role_id;
+        this.status = status;
     }
 
     public int getAccount_id() {
@@ -85,30 +78,6 @@ public class Account {
         this.email = email;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
     public String getFullname() {
         return fullname;
     }
@@ -125,27 +94,36 @@ public class Account {
         this.DOB = DOB;
     }
 
-    public String getAddress() {
-        return address;
+    public String getGender() {
+        return gender;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getSelfIntroduction() {
+        return selfIntroduction;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setSelfIntroduction(String selfIntroduction) {
+        this.selfIntroduction = selfIntroduction;
     }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createDate) {
-        this.createdDate = createDate;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     public Date getModifyDate() {
@@ -171,6 +149,17 @@ public class Account {
     public void setRole_id(int role_id) {
         this.role_id = role_id;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
+
+    
     
     
     

@@ -8,8 +8,8 @@ package Model;
  *
  * @author admin
  */
-public class Expert {
-    private int expertID;
+public class Marketer {
+    private int marketerID;
     private String username;
     private String password;
     private String email;
@@ -18,11 +18,11 @@ public class Expert {
     private String avatar;
     private boolean status;
 
-    public Expert() {
+    public Marketer() {
     }
 
-    public Expert(int expertID, String username, String password, String email, String name, String selfIntroduction, String avatar, boolean status) {
-        this.expertID = expertID;
+    public Marketer(int marketerID, String username, String password, String email, String name, String selfIntroduction, String avatar, boolean status) {
+        this.marketerID = marketerID;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -32,12 +32,12 @@ public class Expert {
         this.status = status;
     }
 
-    public int getExpertID() {
-        return expertID;
+    public int getMarketerID() {
+        return marketerID;
     }
 
-    public void setExpertID(int expertID) {
-        this.expertID = expertID;
+    public void setMarketerID(int marketerID) {
+        this.marketerID = marketerID;
     }
 
     public String getUsername() {
@@ -95,7 +95,5 @@ public class Expert {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
-    
     
 }

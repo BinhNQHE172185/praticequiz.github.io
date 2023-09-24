@@ -8,6 +8,6 @@ package Model;
  *
  * @author admin
  */
-public class Subject {
+public class QuestionStatus {
     
 }

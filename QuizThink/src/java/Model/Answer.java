@@ -13,17 +13,18 @@ public class Answer {
     private int quizId;
     private boolean isCorrect;
     private String content;
+    private String desription;
 
     public Answer() {
     }
 
-    public Answer(int answerId, int quizId, boolean isCorrect, String content) {
+    public Answer(int answerId, int quizId, boolean isCorrect, String content, String desription) {
         this.answerId = answerId;
         this.quizId = quizId;
         this.isCorrect = isCorrect;
         this.content = content;
+        this.desription = desription;
     }
-    
 
     public int getAnswerId() {
         return answerId;
@@ -41,12 +42,12 @@ public class Answer {
         this.quizId = quizId;
     }
 
-    public boolean isCorrect() {
+    public boolean isIsCorrect() {
         return isCorrect;
     }
 
-    public void setCorrect(boolean correct) {
-        isCorrect = correct;
+    public void setIsCorrect(boolean isCorrect) {
+        this.isCorrect = isCorrect;
     }
 
     public String getContent() {
@@ -56,4 +57,14 @@ public class Answer {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getDesription() {
+        return desription;
+    }
+
+    public void setDesription(String desription) {
+        this.desription = desription;
+    }
+
+    
 }

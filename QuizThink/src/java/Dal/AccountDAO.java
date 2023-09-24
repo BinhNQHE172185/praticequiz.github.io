@@ -8,17 +8,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import Model.Account;
 import Model.Role;
+import DAO.BaseDAO;
 
 /**
  *
  * @author admin
  */
-public class AccountDAO extends DBContext {
+public class AccountDAO extends BaseDAO {
     private PreparedStatement ps;
     private ResultSet rs;
     
     public Account getAccountByID(int accountID){
-        Role role = null;
         try{
             String query = "Select * from Account where account_id = ?";
             ps = connection.prepareStatement(query);
@@ -40,7 +40,7 @@ public class AccountDAO extends DBContext {
                         rs.getDate(12),
                         rs.getDate(13),
                         rs.getString(14),
-                        role
+                        rs.getInt(15)
                 );
             }
         }catch(Exception e){
