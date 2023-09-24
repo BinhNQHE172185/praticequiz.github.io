@@ -7,7 +7,6 @@ package Controller;
 import DAO.QuestionDAO;
 import DAO.SubjectDAO;
 import Model.Question;
-import Model.QuestionDetail;
 import Model.Subject;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,11 +41,9 @@ public class QuestionDetailServlet extends HttpServlet {
             QuestionDAO questionDAO = new QuestionDAO();
             SubjectDAO subjectDAO = new SubjectDAO();
 
-            QuestionDetail questionDetail = questionDAO.getQuestionDetailByQuestionId(questionId);
             Question question = questionDAO.getQuestionById(questionId);
             Subject subject = subjectDAO.getSubjectById(question.getSubjectId());
 
-            request.setAttribute("questionDetail", questionDetail);
             request.setAttribute("question", question);
             request.setAttribute("subject", subject);
             request.getRequestDispatcher("QuestionDetail.jsp").forward(request, response);

@@ -11,21 +11,18 @@ package Model;
 public class Quiz {
     private int quizId;
     private int questionId;
+    private Integer type;
     private String content;
-    private float duration;
-    private String description;
 
     public Quiz() {
     }
 
-    public Quiz(int quizId, int questionId, String content, float duration, String description) {
+    public Quiz(int quizId, int questionId, Integer type, String content) {
         this.quizId = quizId;
         this.questionId = questionId;
+        this.type = type;
         this.content = content;
-        this.duration = duration;
-        this.description = description;
     }
-    
 
     public int getQuizId() {
         return quizId;
@@ -43,6 +40,14 @@ public class Quiz {
         this.questionId = questionId;
     }
 
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     public String getContent() {
         return content;
     }
@@ -50,20 +55,5 @@ public class Quiz {
     public void setContent(String content) {
         this.content = content;
     }
-
-    public float getDuration() {
-        return duration;
-    }
-
-    public void setDuration(float duration) {
-        this.duration = duration;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    
 }

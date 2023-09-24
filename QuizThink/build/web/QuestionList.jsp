@@ -73,7 +73,7 @@
                 <div class="page-banner ovbl-dark" style="background-image:url(FrontEnd/assets/images/banner/banner3.jpg);">
                     <div class="container">
                         <div class="page-banner-entry">
-                            <h1 class="text-white"><%= subject.getDescription() %></h1>
+                            <h1 class="text-white"><%= subject.getTitle() %></h1>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                             <li>Science</li>
                             <li>Computer science</li>
                             <li>Software Engineering</li>
-                            <li><%= subject.getDescription() %></li>
+                            <li><%= subject.getTitle() %></li>
                         </ul>
                     </div>
                 </div>
@@ -149,13 +149,6 @@
 
                                         if (questions != null && !questions.isEmpty()) {
                                             for (Question question : questions) {
-                                                int rate = question.getRate();
-
-                                                // Calculate the number of full stars
-                                                int fullStars = rate / 2;
-
-                                                // Calculate the remaining half star
-                                                boolean hasHalfStar = rate % 2 == 1;
                                         %>
                                         <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                             <a href="QuestionDetailServlet?questionId=<%= question.getQuestionId() %>">
@@ -165,29 +158,11 @@
                                                     </div>
                                                     <div class="info-bx text-center">
                                                         <h5><%= question.getTitle() %></h5>
-                                                        <span>level: <%= question.getLevel() %></span>
+                                                        <span><%= question.getQuizCount() %> quiz</span>
                                                     </div>
                                                     <div class="cours-more-info">
                                                         <div class="review">
-                                                            <span><%= question.getStatus() %> Review</span>
-                                                            <ul class="cours-star">
-                                                                <% for (int i = 0; i < fullStars; i++) { %>
-                                                                <li class="active">
-                                                                    <i class="fa fa-star"></i>
-                                                                </li>
-                                                                <% } %>
-                                                                <% if (hasHalfStar) { %>
-                                                                <li class="active">
-                                                                    <i class="fa fa-star-half-o"></i>
-                                                                </li>
-                                                                <% fullStars++; %>
-                                                                <% } %>
-                                                                <% for (int i = fullStars; i < 5; i++) { %>
-                                                                <li>
-                                                                    <i class="fa fa-star"></i>
-                                                                </li>
-                                                                <% } %>
-                                                            </ul>
+                                                            <span>was status-review count</span>
                                                         </div>
                                                         <div class="review">
                                                             <h5>Passed</h5>
@@ -206,200 +181,6 @@
                                             }
                                         %>
                                         <!-- Question list display END-->
-                                        <%--
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 2</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h5>Passed</h5>
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 3</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h5>Passed</h5>
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 4</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h5>Passed</h5>
-                                                        <i class="fa fa-check"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 5</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h6>Not passed</h6>
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 6</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h6>Not passed</h6>
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 7</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h6>Not passed</h6>
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 8</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h6>Not passed</h6>
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-                                            <div class="cours-bx">
-                                                <div class="info-bx text-center">
-                                                    <h5><a href="#">Chapter 9</a></h5>
-                                                    <span>50 quizzes</span>
-                                                </div>
-                                                <div class="cours-more-info">
-                                                    <div class="review">
-                                                        <span>3 Review</span>
-                                                        <ul class="cours-star">
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li class="active"><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review">
-                                                        <h6>Not passed</h6>
-                                                        <i class="fa fa-times"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        --%>
                                         <div class="col-lg-12 m-b20">
                                             <div class="pagination-bx rounded-sm gray clearfix">
                                                 <ul class="pagination">

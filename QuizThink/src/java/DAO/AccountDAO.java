@@ -5,8 +5,6 @@
 package DAO;
 
 import Model.Account;
-import java.util.ArrayList;
-import java.util.List;
 import DAL.DBContext;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -21,48 +19,48 @@ import java.util.logging.Logger;
 public class AccountDAO extends DBContext {
 
     public Account getAccount(String username, String password) {
-        Account x = null;
-        int account_id;
+        Account account = null;
+        int accountId;
         String email;
         String status;
         String gender;
         String avatar;
         String fullname;
-        Date DOB;
+        Date dob;
         String address;
         String phonenumber;
         Date createDate;
         Date modifyDate;
         String passwordToken;
-        int role;
-        String sql = "select * from Account\n"
-                + "where username = ? and password = ?";
+        int roleId;
+        String sql = "SELECT * FROM Account WHERE username = ? AND password = ?";
         try {
             PreparedStatement ps = getConnection().prepareStatement(sql);
             ps.setString(1, username);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                account_id = rs.getInt("Account_id");
+                accountId = rs.getInt("Account_id");
                 email = rs.getString("email");
                 status = rs.getString("status");
                 avatar = rs.getString("avatar");
                 gender = rs.getString("gender");
                 fullname = rs.getString("fullname");
-                DOB = rs.getDate("DOB");
+                dob = rs.getDate("DOB");
                 address = rs.getString("address");
                 phonenumber = rs.getString("phonenumber");
                 createDate = rs.getDate("createdDate");
                 modifyDate = rs.getDate("modifyDate");
                 passwordToken = rs.getString("passwordToken");
-                role = rs.getInt("role_id");
-                x = new Account(account_id, email, status, gender, avatar, fullname, DOB, address, phonenumber, createDate, modifyDate, passwordToken, role);
+                roleId = rs.getInt("role_id");
+                boolean accountStatus = rs.getBoolean("status");
+                account = new Account(accountId, username, password, email, fullname, dob, gender, null, avatar, createDate, modifyDate, passwordToken, roleId, accountStatus);
             }
             rs.close();
             ps.close();
         } catch (Exception ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return x;
+        return account;
     }
 }

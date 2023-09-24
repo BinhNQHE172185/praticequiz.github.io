@@ -9,6 +9,7 @@ import Model.Subject;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Time;
 
 /**
  *
@@ -28,21 +29,26 @@ public class SubjectDAO extends DBContext {
             if (resultSet.next()) {
                 int expertId = resultSet.getInt("Expert_id");
                 int subjectDimensionId = resultSet.getInt("SubjectDimension_id");
-                int accountId = resultSet.getInt("Account_id");
-                int level = resultSet.getInt("level");
+                String title = resultSet.getString("title");
                 String imageURL = resultSet.getString("imageURL");
-                String description = resultSet.getString("discription");
-                float duration = resultSet.getFloat("duration");
-                Date startTime = resultSet.getDate("Start_time");
-                Date endTime = resultSet.getDate("End_time");
-                int hasRegistered = resultSet.getInt("hasRegisted");
+                int questionCount = resultSet.getInt("question_count");
+                int rate = resultSet.getInt("rate");
+                int rateCount = resultSet.getInt("rate_count");
+                int level = resultSet.getInt("level");
+                float requirement = resultSet.getFloat("requirement");
+                String description = resultSet.getString("description");
+                Date createdDate = resultSet.getDate("createdDate");
+                Date modifyDate = resultSet.getDate("modifyDate");
+                boolean status = resultSet.getBoolean("status");
+                Time duration = resultSet.getTime("duration");
 
-                subject = new Subject(subjectId, expertId, subjectDimensionId, accountId, level, imageURL, description, duration, startTime, endTime, hasRegistered);
+                subject = new Subject(subjectId, expertId, subjectDimensionId, title, imageURL, questionCount, rate, rateCount, level, requirement, description, createdDate, modifyDate, status, duration);
             }
         } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }
+
         return subject;
     }
 }
