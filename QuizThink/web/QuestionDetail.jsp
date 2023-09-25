@@ -185,8 +185,8 @@
                                                         <h5>Higher than <%= question.getRequirement() %>% to pass</h5>
 
                                                         <!-- Add exam information here -->
-                                                        <form class = "text-center m-t20" action="exam-servlet-url" method="POST">
-                                                            <input type="hidden" name="questionId" value="your-questionId-value">
+                                                        <form class = "text-center m-t20" action="QuizHandleServlet" method="POST">
+                                                            <input type="hidden" name="questionId" value="<%= question.getQuestionId() %>">
                                                             <button type="submit" class="submit-btn detail">Start Exam</button>
                                                         </form>
                                                     </div>
