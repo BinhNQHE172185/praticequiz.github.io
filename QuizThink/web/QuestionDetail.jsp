@@ -234,8 +234,8 @@
                                         %>
                                         <div class="col-md-12 col-lg-12 col-sm-12 m-b30">
                                             <div class="cours-bx">
-                                                <div id="quiz<%= quiz.getQuizId() %>">
-                                                    <div class="info-bx text-left">
+                                                <div class="d-flex" id="quiz<%= quiz.getQuizId() %>">
+                                                    <div class="info-bx col-md-6 col-lg-6 col-sm-6 text-left border-right">
                                                         <h5>Question <%= quiz.getQuizId() %>: <%= quiz.getContent() %></h5>
                                                         <%
                                                         if (quiz.getType() == 0) {
@@ -249,7 +249,7 @@
                                                         }
                                                         %>
                                                     </div>
-                                                    <div class="cours-more-info">
+                                                    <div class="col-md-6 col-lg-6 col-sm-6 cours-more-info">
                                                         <div class="review col-md-12 col-lg-12 col-sm-12">
                                                             <ul class="option">
                                                                 <%
