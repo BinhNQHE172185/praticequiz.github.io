@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Register
-    Created on : Sep 18, 2023, 11:04:52 PM
-    Author     : LEMONLORD
+    Document   : ForgotPassword
+    Created on : Sep 25, 2023, 4:04:51 PM
+    Author     : QUYBINH
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,11 +27,11 @@
         <meta name="format-detection" content="telephone=no">
 
         <!-- FAVICONS ICON ============================================= -->
-        <link rel="icon" href="FrontEnd/assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" type="image/x-icon" href="FrontEnd/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
-        <title>Quiz Think : Prepare to Quiz Think with Awesomeness! </title>
+        <title>EduChamp : Education HTML Template </title>
 
         <!-- MOBILE SPECIFIC ============================================= -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,24 +60,16 @@
             <div id="loading-icon-bx"></div>
             <div class="account-form">
                 <div class="account-head" style="background-image:url(FrontEnd/assets/images/background/bg2.jpg);">
-                    <a href="index.html"><img src="FrontEnd/assets/images/Logo2.png" alt=""></a>
+                    <a href="index.html"><img src="FrontEnd/assets/images/logo-white-2.png" alt=""></a>
                 </div>
                 <div class="account-form-inner">
                     <div class="account-container">
                         <div class="heading-bx left">
-                            <h2 class="title-head">Sign Up <span>Now</span></h2>
+                            <h2 class="title-head">Forget <span>Password</span></h2>
                             <p>Login Your Account <a href="Login.jsp">Click here</a></p>
                         </div>	
                         <form class="contact-bx">
                             <div class="row placeani">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <label>Your Name</label>
-                                            <input name="dzName" type="text" required="" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <div class="input-group">
@@ -86,16 +78,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <div class="input-group"> 
-                                            <label>Your Password</label>
-                                            <input name="dzEmail" type="password" class="form-control" required="">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-lg-12 m-b30">
-                                    <button name="submit" type="submit" value="Submit" class="btn button-md">Sign Up</button>
+                                    <button name="submit" type="submit" value="Submit" class="btn button-md">Submit</button>
                                 </div>
                             </div>
                         </form>
