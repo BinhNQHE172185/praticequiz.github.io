@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
             cookie.setMaxAge(60*60);
             response.addCookie(cookie);
             
-            response.sendRedirect("index.html");
+            response.sendRedirect("Home.jsp");
         }
     }
 }
