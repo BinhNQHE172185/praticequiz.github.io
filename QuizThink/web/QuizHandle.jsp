@@ -152,7 +152,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="row"><h4>Quiz list:</h4></div>
                                     <div class="row">
-                                        <!-- Question list display-->
+                                        <!-- Quiz list display-->
                                         <%
                                         if (quizzes != null && !quizzes.isEmpty()) {
                                             for (Quiz quiz : quizzes) {
@@ -212,7 +212,7 @@
                                         <%
                                         }
                                         %>
-                                        <!-- Question list display END-->
+                                        <!-- Quiz list display END-->
                                         <div class="col-lg-12 m-b20">
                                             <div class="pagination-bx rounded-sm gray clearfix">
                                                 <ul class="pagination">
@@ -250,6 +250,7 @@
         <script src="FrontEnd/assets/vendors/owl-carousel/owl.carousel.js"></script>
         <script src="FrontEnd/assets/js/functions.js"></script>
         <script src="FrontEnd/assets/js/contact.js"></script>
+        <script src="FrontEnd/assets/js/quizHandle.js"></script>
         <script src='FrontEnd/assets/vendors/switcher/switcher.js'></script>
     </body>
 
