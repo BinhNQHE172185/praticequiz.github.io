@@ -31,17 +31,15 @@ public class AccountDAO extends BaseDAO {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getString(6),
+                        rs.getDate(6),
                         rs.getString(7),
                         rs.getString(8),
-                        rs.getDate(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getDate(12),
-                        rs.getDate(13),
-                        rs.getString(14),
-                        rs.getInt(15)
-                );
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getBoolean(14));
             }
         }catch(Exception e){
             

@@ -35,15 +35,19 @@ public class SubjectDAO extends BaseDAO {
             while(rs.next()){
                 Subject subject= new Subject(rs.getInt(1),
                         rs.getInt(2),
-                        rs.getString(3),
+                        rs.getInt(3),
                         rs.getString(4),
-                        rs.getFloat(5),
-                        rs.getDate(6),
-                        rs.getDate(7),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
                         rs.getInt(8),
-                        expert,
-                        subjectDimension,
-                        account);
+                        rs.getInt(9),
+                        rs.getFloat(10),
+                        rs.getString(11),
+                        rs.getDate(12),
+                        rs.getDate(13),
+                        rs.getBoolean(14),
+                        rs.getTime(15));
                 list.add(subject);
             }
         } catch (Exception e) {
@@ -52,10 +56,6 @@ public class SubjectDAO extends BaseDAO {
         return null;
     }
     
-    private PreparedStatement ps;
-    private ResultSet rs;
-    private List<Subject> list;  
-
     public List<Subject> getaLLSubject() {
         Expert expert = null;
         SubjectDimension subjectDimension = null;
@@ -67,15 +67,19 @@ public class SubjectDAO extends BaseDAO {
             while(rs.next()){
                 Subject subject= new Subject(rs.getInt(1),
                         rs.getInt(2),
-                        rs.getString(3),
+                        rs.getInt(3),
                         rs.getString(4),
-                        rs.getFloat(5),
-                        rs.getDate(6),
-                        rs.getDate(7),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getInt(7),
                         rs.getInt(8),
-                        expert,
-                        subjectDimension,
-                        account);
+                        rs.getInt(9),
+                        rs.getFloat(10),
+                        rs.getString(11),
+                        rs.getDate(12),
+                        rs.getDate(13),
+                        rs.getBoolean(14),
+                        rs.getTime(15));
                 list.add(subject);
             }
         } catch (Exception e) {
