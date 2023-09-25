@@ -38,7 +38,7 @@ public class QuestionListServlet extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //int subjectId = Integer.parseInt(request.getParameter("subjectId"));
-            int subjectId = 15;
+            int subjectId = 1;
             
             SubjectDAO subjectDAO = new SubjectDAO();
             QuestionDAO questionDAO = new QuestionDAO();

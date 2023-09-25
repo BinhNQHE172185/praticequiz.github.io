@@ -13,16 +13,28 @@ public class Quiz {
     private int questionId;
     private Integer type;
     private String content;
+    private String description;
 
     public Quiz() {
     }
 
-    public Quiz(int quizId, int questionId, Integer type, String content) {
+    public Quiz(int quizId, int questionId, Integer type, String content, String description) {
         this.quizId = quizId;
         this.questionId = questionId;
         this.type = type;
         this.content = content;
+        this.description = description;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
 
     public int getQuizId() {
         return quizId;

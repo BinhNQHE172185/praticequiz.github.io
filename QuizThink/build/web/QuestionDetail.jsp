@@ -232,22 +232,27 @@
                                         if (quizzes != null && !quizzes.isEmpty()) {
                                             for (Quiz quiz : quizzes) {
                                         %>
-                                        <div class="col-md-12 col-lg-12 col-sm-12 m-b30">
+                                        <div class="col-md-12 col-lg-12 col-sm-12 m-b20">
                                             <div class="cours-bx">
                                                 <div class="d-flex" id="quiz<%= quiz.getQuizId() %>">
                                                     <div class="info-bx col-md-6 col-lg-6 col-sm-6 text-left border-right">
-                                                        <h5>Question <%= quiz.getQuizId() %>: <%= quiz.getContent() %></h5>
-                                                        <%
-                                                        if (quiz.getType() == 0) {
-                                                        %>
-                                                        <span>Select all that apply</span>
-                                                        <%
-                                                        } else {
-                                                        %>
-                                                        <span>Select <%= quiz.getType() %> that apply</span>
-                                                        <%
-                                                        }
-                                                        %>
+                                                        <div class="col-md-12 col-lg-12 col-sm-12 text-left border-bottom">
+                                                            <h5>Question <%= quiz.getQuizId() %>: <%= quiz.getContent() %></h5>
+                                                            <%
+                                                            if (quiz.getType() == 0) {
+                                                            %>
+                                                            <span>Select all that apply</span>
+                                                            <%
+                                                            } else {
+                                                            %>
+                                                            <span>Select <%= quiz.getType() %> that apply</span>
+                                                            <%
+                                                            }
+                                                            %>
+                                                        </div>
+                                                        <div class="col-md-12 col-lg-12 col-sm-12 text-left m-t20">
+                                                            <span>Explanation: <%= quiz.getDescription() %></span>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6 col-lg-6 col-sm-6 cours-more-info">
                                                         <div class="review col-md-12 col-lg-12 col-sm-12">
@@ -258,10 +263,10 @@
                                                                 if (answers != null && !answers.isEmpty()) {
                                                                     for (Answer answer : answers) {
                                                                 %>
-                                                                <li>
+                                                                <li class="<%= answer.isCorrect() %>">
                                                                     <input type="checkbox" name="quiz<%= quiz.getQuizId() %>" id="choice<%= answer.getAnswerId() %>"
                                                                            onclick="toggleEffect(this,<%= quiz.getType() %>)">
-                                                                    <label for="choice<%= answer.getAnswerId() %>">
+                                                                    <label class = "answer-containser" for="choice<%= answer.getAnswerId() %>">
                                                                         <h5><%= answer.getContent() %></h5>
                                                                     </label>
                                                                 </li>

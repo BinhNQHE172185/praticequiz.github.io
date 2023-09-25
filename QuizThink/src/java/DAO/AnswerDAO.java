@@ -31,9 +31,8 @@ public class AnswerDAO extends DBContext {
                 int answerId = resultSet.getInt("Answer_id");
                 boolean isCorrect = resultSet.getBoolean("isCorrect");
                 String content = resultSet.getString("content");
-                String description = resultSet.getString("description");
 
-                Answer answer = new Answer(answerId, quizId, isCorrect, content, description);
+                Answer answer = new Answer(answerId, quizId, isCorrect, content);
 
                 answers.add(answer);
             }

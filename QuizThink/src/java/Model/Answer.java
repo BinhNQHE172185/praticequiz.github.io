@@ -14,17 +14,15 @@ public class Answer {
     private int quizId;
     private boolean isCorrect;
     private String content;
-    private String description;
 
     public Answer() {
     }
 
-    public Answer(int answerId, int quizId, boolean isCorrect, String content, String description) {
+    public Answer(int answerId, int quizId, boolean isCorrect, String content) {
         this.answerId = answerId;
         this.quizId = quizId;
         this.isCorrect = isCorrect;
         this.content = content;
-        this.description = description;
     }
 
     public int getAnswerId() {
@@ -59,11 +57,4 @@ public class Answer {
         this.content = content;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

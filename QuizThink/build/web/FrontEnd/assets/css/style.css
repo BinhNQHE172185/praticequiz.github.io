@@ -3249,6 +3249,9 @@ label.selected {
     margin: 0px;
     color: white;
 }
+li.true label.answer-containser {
+    background-color: lightgreen;
+}
 @media screen and (max-width: 575px) {
     #rc-imageselect,
     .g-recaptcha {

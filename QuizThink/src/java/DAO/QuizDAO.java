@@ -30,8 +30,9 @@ public class QuizDAO extends DBContext {
                 int quizId = resultSet.getInt("Quiz_id");
                 Integer type = resultSet.getInt("type");
                 String content = resultSet.getString("content");
+                String description = resultSet.getString("description");
 
-                Quiz quiz = new Quiz(quizId, questionId, type, content);
+                Quiz quiz = new Quiz(quizId, questionId, type, content, description);
 
                 quizzes.add(quiz);
             }
