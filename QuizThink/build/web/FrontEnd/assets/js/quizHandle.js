@@ -6,6 +6,7 @@
 //quiz handle
 var quizCounter = 0;
 var selectedChoices = [];
+var timeLeft = 0;
 
 function toggleEffect(checkbox, limitCheck) {
     var selectedCheckboxes = document.querySelectorAll(
@@ -31,7 +32,7 @@ function toggleEffect(checkbox, limitCheck) {
             quizCounter++;
         }
         // Add the selected choice to the array
-        selectedChoices.push(checkbox.value);
+        selectedChoices.push(checkbox.id);
     } else {
         selectedLabel.classList.remove("selected");
         navButton.classList.remove("selected");
@@ -40,7 +41,7 @@ function toggleEffect(checkbox, limitCheck) {
             quizCounter--;
         }
         // Remove the deselected choice from the array
-        var index = selectedChoices.indexOf(checkbox.value);
+        var index = selectedChoices.indexOf(checkbox.id);
         if (index !== -1) {
             selectedChoices.splice(index, 1);
         }
@@ -49,6 +50,30 @@ function toggleEffect(checkbox, limitCheck) {
     // Update the counter display
     var counterElement = document.getElementById("quiz-counter");
     counterElement.textContent = quizCounter;
+}
+function submitQuiz() {
+    // Create a data object to send in the POST request
+    var data = {
+        selectedChoices: selectedChoices,
+        timeLeft: timeLeft
+    };
+
+    // Send a POST request to the servlet endpoint
+    fetch('/servlet-url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        // Handle the response from the servlet
+        // Add your code to handle the response here
+    })
+    .catch(error => {
+        // Handle any errors that occur during the request
+        console.error('Error:', error);
+    });
 }
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
@@ -60,7 +85,7 @@ var x = setInterval(function () {
     var now = new Date().getTime();
 
     // Find the distance between now and the count down date
-    var distance = countDownDate - now;
+    timeLeft = countDownDate - now;
 
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));

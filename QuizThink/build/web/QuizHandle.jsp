@@ -108,7 +108,15 @@
                                         <!-- Counter display for quizzes completed -->
                                         <h4>Quiz completed:</h4>
                                         <h4 id="quiz-counter">0</h4>
-                                        <h4>/Total</h4>
+                                        <%
+                                        Question question = (Question) request.getAttribute("question");
+
+                                        if (question != null) {
+                                        %>
+                                        <h4>/<%= question.getQuizCount() %></h4>
+                                        <%
+                                            }
+                                        %>
                                     </div>
                                     <div class="question-timer-container">
                                         <h4>Timer:</h4>
@@ -184,9 +192,9 @@
                                                                     for (Answer answer : answers) {
                                                                 %>
                                                                 <li>
-                                                                    <input type="checkbox" name="quiz<%= quiz.getQuizId() %>" id="choice<%= answer.getAnswerId() %>"
+                                                                    <input type="checkbox" name="quiz<%= quiz.getQuizId() %>" id="<%= answer.getAnswerId() %>"
                                                                            onclick="toggleEffect(this,<%= quiz.getType() %>)">
-                                                                    <label class = "answer-containser" for="choice<%= answer.getAnswerId() %>">
+                                                                    <label class = "answer-containser" for="<%= answer.getAnswerId() %>">
                                                                         <h5><%= answer.getContent() %></h5>
                                                                     </label>
                                                                 </li>
@@ -232,7 +240,11 @@
                 </div>
             </div>
             <!-- Quiz END-->
-            <div class="submit-container"><button class="submit-btn"><h4>Submit</h4></button></div>
+            <div class="submit-container">
+                <button class="submit-btn" onclick="submitQuiz()">
+                    <h4>Submit</h4>
+                </button>
+            </div>
             <button class="back-to-top fa fa-chevron-up"></button>
         </div>
         <!-- External JavaScripts -->
