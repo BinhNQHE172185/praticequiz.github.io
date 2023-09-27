@@ -4,29 +4,21 @@
  */
 package Controller;
 
-import DAO.AnswerDAO;
-import DAO.QuestionDAO;
-import DAO.QuizDAO;
 import DAO.SubjectDAO;
-import Model.Answer;
-import Model.Question;
-import Model.Quiz;
-import Model.Subject;
-import DAO.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author kimdi
  */
-public class QuestionDetailServlet extends HttpServlet {
+public class RegistedListServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,27 +32,10 @@ public class QuestionDetailServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            int questionId = Integer.parseInt(request.getParameter("questionId"));
-            QuestionDAO questionDAO = new QuestionDAO();
-            SubjectDAO subjectDAO = new SubjectDAO();
-            QuizDAO quizDAO = new QuizDAO();
-            AnswerDAO answerDAO = new AnswerDAO();
-
-            Question question = questionDAO.getQuestionById(questionId);
-            Subject subject = subjectDAO.getSubjectById(question.getSubjectId());
-            List<Quiz> quizzes = quizDAO.getQuizzesByQuestionId(questionId);
-            for (Quiz quizz : quizzes) {
-                List<Answer> answers = answerDAO.getAnswersByQuizId(quizz.getQuizId());
-                request.setAttribute("answers" + quizz.getQuizId(), answers);
-
-            }
-            request.setAttribute("question", question);
-            request.setAttribute("subject", subject);
-            request.setAttribute("quizzes", quizzes);
-            request.getRequestDispatcher("QuestionDetail.jsp").forward(request, response);
-        }
+        SubjectDAO dao = new SubjectDAO();
+        //List<Subject> listSubject = dao.getRegistedSubject(1);
+        //request.setAttribute("listSubject", listSubject);
+        request.getRequestDispatcher("course.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

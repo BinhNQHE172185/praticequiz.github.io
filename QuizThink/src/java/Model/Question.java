@@ -11,10 +11,6 @@ import java.util.Date;
  *
  * @author kimdi
  */
-<<<<<<< Updated upstream
-=======
-///remove this file
->>>>>>> Stashed changes
 public class Question {
 
     private int questionId;

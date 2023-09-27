@@ -6,9 +6,13 @@ package DAO;
 
 import Model.Account;
 import DAL.DBContext;
+import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,13 +22,10 @@ import java.util.logging.Logger;
  */
 public class AccountDAO extends DBContext {
 
-<<<<<<< Updated upstream
-=======
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
 
->>>>>>> Stashed changes
     public Account getAccount(String username, String password) {
         Account account = null;
         int accountId;
@@ -69,8 +70,6 @@ public class AccountDAO extends DBContext {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return account;
-<<<<<<< Updated upstream
-=======
     }
 
     // Create new Account which could be expert marketing sale, customer, membership
@@ -185,6 +184,5 @@ public class AccountDAO extends DBContext {
             e.printStackTrace();
         }
         return null;
->>>>>>> Stashed changes
     }
 }

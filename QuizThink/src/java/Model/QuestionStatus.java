@@ -4,7 +4,6 @@
  */
 package Model;
 
-<<<<<<< Updated upstream
 import java.sql.Date;
 
 /**
@@ -98,12 +97,4 @@ public class QuestionStatus {
     public void setPassDate(Date passDate) {
         this.passDate = passDate;
     }
-=======
-/**
- *
- * @author admin
- */
-public class QuestionStatus {
->>>>>>> Stashed changes
-    
 }
