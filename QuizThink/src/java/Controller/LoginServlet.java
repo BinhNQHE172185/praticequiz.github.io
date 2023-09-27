@@ -9,6 +9,7 @@ import Model.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -33,7 +34,12 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("status", status);
             request.getRequestDispatcher("Login.jsp").include(request, response);
         }else{
-            response.sendRedirect("index.html");
+            //Cookie luu tru username
+            Cookie cookie = new Cookie("username", username);
+            cookie.setMaxAge(60*60);
+            response.addCookie(cookie);
+            
+            response.sendRedirect("Home.jsp");
         }
     }
 }
