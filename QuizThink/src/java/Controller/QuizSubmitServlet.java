@@ -4,6 +4,7 @@
  */
 package Controller;
 
+<<<<<<< Updated upstream:QuizThink/src/java/Controller/QuizSubmitServlet.java
 import DAO.AnswerDAO;
 import DAO.QuestionDAO;
 import DAO.QuizDAO;
@@ -12,6 +13,9 @@ import Model.Answer;
 import Model.Question;
 import Model.Quiz;
 import Model.Subject;
+=======
+import DAO.SubjectDAO;
+>>>>>>> Stashed changes:QuizThink/src/java/Controller/RegistedListServlet.java
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -39,6 +43,7 @@ public class QuizSubmitServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+<<<<<<< Updated upstream:QuizThink/src/java/Controller/QuizSubmitServlet.java
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             int questionId = Integer.parseInt(request.getParameter("questionId"));
@@ -57,6 +62,12 @@ public class QuizSubmitServlet extends HttpServlet {
             request.setAttribute("quizzes", quizzes);
             request.getRequestDispatcher("QuizHandle.jsp").forward(request, response);
         }
+=======
+        SubjectDAO dao = new SubjectDAO();
+        //List<Subject> listSubject = dao.getRegistedSubject(1);
+        //request.setAttribute("listSubject", listSubject);
+        request.getRequestDispatcher("course.jsp").forward(request, response);
+>>>>>>> Stashed changes:QuizThink/src/java/Controller/RegistedListServlet.java
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

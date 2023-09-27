@@ -4,6 +4,7 @@
  */
 package Controller;
 
+<<<<<<< Updated upstream:QuizThink/src/java/Controller/QuestionDetailServlet.java
 import DAO.AnswerDAO;
 import DAO.QuestionDAO;
 import DAO.QuizDAO;
@@ -12,6 +13,9 @@ import Model.Answer;
 import Model.Question;
 import Model.Quiz;
 import Model.Subject;
+=======
+import DAO.AccountDAO;
+>>>>>>> Stashed changes:QuizThink/src/java/Controller/ProfileServlet.java
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;

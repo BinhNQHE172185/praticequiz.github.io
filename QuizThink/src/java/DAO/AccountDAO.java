@@ -18,6 +18,13 @@ import java.util.logging.Logger;
  */
 public class AccountDAO extends DBContext {
 
+<<<<<<< Updated upstream
+=======
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+>>>>>>> Stashed changes
     public Account getAccount(String username, String password) {
         Account account = null;
         int accountId;
@@ -62,5 +69,122 @@ public class AccountDAO extends DBContext {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return account;
+<<<<<<< Updated upstream
+=======
+    }
+
+    // Create new Account which could be expert marketing sale, customer, membership
+    public void createAnyAccount(String username, String password, String email, String status, String gender, String avatar, String fullname, String DOB, String address, String phonenumber, int roleId) {
+        String query = "INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [modifyDate], [passwordToken], [role_id])\n"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?);";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, email);
+            ps.setString(4, status);
+            ps.setString(5, gender);
+            ps.setString(6, avatar);
+            ps.setString(7, fullname);
+            ps.setString(8, DOB);
+            ps.setString(9, address);
+            ps.setString(10, phonenumber);
+
+            LocalDateTime currentTime = LocalDateTime.now();
+            Date createdDate = Date.valueOf(currentTime.toLocalDate());
+            ps.setDate(11, createdDate);
+            ps.setInt(12, roleId);
+            ps.executeUpdate(); // no result ==> no need result set
+        } catch (Exception e) {
+            // Handle exceptions here
+        } finally {
+            // Close database connections and resources in a real application
+            // For simplicity, it's omitted here.
+        }
+    }
+
+    // Get number of account
+    public int getNumOfAccount() {
+        String query = "select COUNT(*) from Account";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    //Get all account
+    public List<Account> getAllAccount(int page) {
+        List<Account> list = new ArrayList<>();
+        String query = "SELECT * FROM Account\n"
+                + "ORDER BY Account_id\n"
+                + "OFFSET ? ROWS FETCH NEXT 15 ROWS ONLY";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, (page - 1) * 15); // page 1 starts at index 0
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account account = new Account(
+                        rs.getInt("Account_id"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("email"),
+                        rs.getString("fullname"),
+                        rs.getDate("DOB"),
+                        rs.getString("gender"),
+                        rs.getString("self-introduction"),
+                        rs.getString("avatar"),
+                        rs.getDate("createdDate"),
+                        rs.getDate("modifyDate"),
+                        rs.getString("passwordToken"),
+                        rs.getInt("role_id"),
+                        rs.getBoolean("status")
+                );
+                list.add(account);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    // Get  Account by ID
+
+    public Account getAccountByID(int accountID) {
+        String query = "SELECT * FROM Account WHERE Account_id = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setInt(1, accountID);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return new Account(
+                        rs.getInt("Account_id"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("email"),
+                        rs.getString("fullname"),
+                        rs.getDate("DOB"),
+                        rs.getString("gender"),
+                        rs.getString("self-introduction"),
+                        rs.getString("avatar"),
+                        rs.getDate("createdDate"),
+                        rs.getDate("modifyDate"),
+                        rs.getString("passwordToken"),
+                        rs.getInt("role_id"),
+                        rs.getBoolean("status")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+>>>>>>> Stashed changes
     }
 }
