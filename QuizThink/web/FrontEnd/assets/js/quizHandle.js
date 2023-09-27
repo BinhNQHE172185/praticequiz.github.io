@@ -52,10 +52,12 @@ function toggleEffect(checkbox, limitCheck) {
     counterElement.textContent = quizCounter;
 }
 function submitQuiz() {
+    var submitQuestion = document.getElementById("submitQuestion").getAttribute("data-submitQuestion");
     // Create a data object to send in the POST request
     var data = {
         selectedChoices: selectedChoices,
-        timeLeft: timeLeft
+        timeLeft: timeLeft,
+        question: submitQuestion
     };
 
     // Send a POST request to the servlet endpoint
@@ -76,7 +78,8 @@ function submitQuiz() {
     });
 }
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+var endTimeElement = document.getElementById("endTimeElement");
+var endTime = new Time(endTimeElement.getAttribute("data-endTime")).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -84,21 +87,21 @@ var x = setInterval(function () {
     // Get today's date and time
     var now = new Date().getTime();
 
-    // Find the distance between now and the count down date
-    timeLeft = countDownDate - now;
+    // Find the timeLeft between now and the count down date
+    timeLeft = endTime - now;
 
     // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
     document.getElementById("question-timer").innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
     // If the count down is finished, write some text
-    if (distance < 0) {
+    if (timeLeft < 0) {
         clearInterval(x);
         document.getElementById("question-timer").innerHTML = "EXPIRED";
     }

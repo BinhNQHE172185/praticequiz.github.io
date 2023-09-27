@@ -1,12 +1,3 @@
-///*
- ***
- ***
- Name: 			functions.js
- Written by: 	ThemeTrade 
- Theme Version:	1.0.0
- ***
- ***
- */
 //question detail
 function showExamPopup() {
     var popup = document.getElementById("examPopup");

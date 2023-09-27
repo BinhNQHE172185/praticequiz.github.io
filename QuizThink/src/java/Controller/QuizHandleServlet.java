@@ -7,18 +7,17 @@ package Controller;
 import DAO.AnswerDAO;
 import DAO.QuestionDAO;
 import DAO.QuizDAO;
-import DAO.SubjectDAO;
 import Model.Answer;
 import Model.Question;
 import Model.Quiz;
-import Model.Subject;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
+import java.sql.Time;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -53,8 +52,15 @@ public class QuizHandleServlet extends HttpServlet {
                 request.setAttribute("answers" + quizz.getQuizId(), answers);
 
             }
+            Calendar calendar = Calendar.getInstance();
+            Time duration = question.getDuration();
+            calendar.add(Calendar.HOUR_OF_DAY, duration.getHours());
+            calendar.add(Calendar.MINUTE, duration.getMinutes());
+            calendar.add(Calendar.SECOND, duration.getSeconds());
+            Time endTime = new Time(calendar.getTimeInMillis());
             request.setAttribute("question", question);
             request.setAttribute("quizzes", quizzes);
+            request.setAttribute("endTime", endTime);
             request.getRequestDispatcher("QuizHandle.jsp").forward(request, response);
         }
     }
