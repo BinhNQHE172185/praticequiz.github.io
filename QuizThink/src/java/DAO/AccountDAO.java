@@ -233,10 +233,21 @@ public class AccountDAO extends DBContext {
         }
     }
     
+    public void updatePassword(String password, String accountID) {
+        String query = "update Account set password = ? where Account_id = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, password);
+            ps.setString(2, accountID);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+
+        }
+    }
+    
     public static void main(String[] args) {
         AccountDAO dao = new AccountDAO();
-        Account acc = new Account();
-        acc = dao.getAccountByID(1);
-        System.out.println(acc.getFullname());
+        dao.updateProfile("Ngoc Dung Bui", "drd3002tptb@gmail.com", "Male", "2003-08-23", "Hello World", "1");
     }
 }
