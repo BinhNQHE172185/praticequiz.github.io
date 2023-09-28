@@ -312,7 +312,7 @@
                                 <h4>User Profile</h4>
                             </div>
                             <div class="widget-inner">
-                                <form class="edit-profile m-b30">
+                                <form class="edit-profile m-b30" action="UpdateUserProfile" method="post">
                                     <div class="">
                                         <div class="form-group row">
                                             <div class="col-sm-10  ml-auto">
@@ -322,19 +322,19 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Full Name</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="text" value="">
+                                                <input class="form-control" type="text" name="fullname" value="">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="email" value="">
+                                                <input class="form-control" type="email" name="email" value="">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Date of Birth</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="date" value="">
+                                                <input class="form-control" type="date" name="dob" value="">
                                                 <span class="help"></span>
                                             </div>
                                         </div>
@@ -350,10 +350,17 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Self-Introduction</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="text" value="">
+                                                <input class="form-control" type="text" name="introduction" value="">
                                                 <span class="help">Tell something about yourself.</span>
                                             </div>
                                         </div>
+<!--                                    <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Avatar</label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" type="text" name="introduction" value="">
+                                                <span class="help"></span>
+                                            </div>
+                                        </div>-->
                                         <div class="seperator"></div>
                                     </div>
                                     <div class="">

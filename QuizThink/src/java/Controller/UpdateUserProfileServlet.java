@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import DAO.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -31,9 +32,16 @@ public class UpdateUserProfileServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+        String dob = request.getParameter("dob");
+        String introduction = request.getParameter("introduction");
+        AccountDAO dao = new AccountDAO();
+        dao.updateProfile(fullname, email, gender, dob, introduction, "1");
+        response.sendRedirect("user-profile.jsp");
         }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -75,3 +83,4 @@ public class UpdateUserProfileServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
