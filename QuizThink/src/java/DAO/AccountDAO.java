@@ -20,11 +20,11 @@ import java.util.*;
  * @author LEMONLORD
  */
 public class AccountDAO extends DBContext {
-    
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
     public Account getAccount(String username, String password) {
         Account account = null;
         int accountId;
@@ -184,16 +184,16 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
-    
+
     // Get  Account by ID
-    public Account getAccountByID(String Account_ID){
+    public Account getAccountByID(String Account_ID) {
         String query = "select * from Account where account_id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, Account_ID);
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 return new Account(
                         rs.getInt("accountId"),
                         rs.getString("username"),
@@ -215,5 +215,4 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
-    
 }
