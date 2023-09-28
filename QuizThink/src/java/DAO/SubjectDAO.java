@@ -20,7 +20,36 @@ public class SubjectDAO extends DBContext {
 
     private PreparedStatement ps;
     private ResultSet rs;
-    private List<Subject> list;  
+    private List<Subject> list;
+    
+    public List<Subject> getAllSubjects(){
+        try{
+            String query = "SELECT * FROM Subject";
+            ps = getConnection().prepareStatement(query);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Subject subject= new Subject(rs.getInt("subjectId"),
+                        rs.getInt("expertId"),
+                        rs.getInt("subjectDimensionId"),
+                        rs.getString("title"),
+                        rs.getString("imageURL"),
+                        rs.getInt("questionCount"),
+                        rs.getInt("rate"),
+                        rs.getInt("rateCount"),
+                        rs.getInt("level"),
+                        rs.getFloat("requirement"),
+                        rs.getString("description"),
+                        rs.getDate("createdDate"),
+                        rs.getDate("modifyDate"),
+                        rs.getBoolean("status"),
+                        rs.getTime("duration"));
+                list.add(subject);
+            }
+        }catch(Exception e){
+            
+        }
+        return list;
+    }
     
     public Subject getSubjectById(int subjectId) {
         String sql = "SELECT * FROM Subject WHERE subject_Id = ?";
