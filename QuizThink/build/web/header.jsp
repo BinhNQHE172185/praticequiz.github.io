@@ -13,8 +13,8 @@
                             <div class="topbar-right">
                                 <ul>
 
-                                    <li><a href="login.jsp">Login</a></li>
-                                    <li><a href="register.jsp">Register</a></li>
+                                    <li><a href="Login.jsp">Login</a></li>
+                                    <li><a href="Register.jsp">Register</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="container clearfix">
                             <!-- Header Logo ==== -->
                             <div class="menu-logo">
-                                <a href="home.jsp"><img src="FrontEnd/assets/images/logo-white-2.png" alt=""></a>
+                                <a href="home.jsp"><img src="FrontEnd/assets/images/Logo2.png" alt=""></a>
                             </div>
                             <!-- Mobile Nav Button ==== -->
                             <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">

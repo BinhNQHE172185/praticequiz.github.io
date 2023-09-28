@@ -12,14 +12,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import Model.Account;
 
 /**
  *
  * @author admin
  */
-@WebServlet(name = "ProfileServlet", urlPatterns = {"/Profile"})
-public class ProfileServlet extends HttpServlet {
+@WebServlet(name = "UpdateUserProfileServlet", urlPatterns = {"/UpdateUserProfile"})
+public class UpdateUserProfileServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,13 +32,16 @@ public class ProfileServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+        String dob = request.getParameter("dob");
+        String introduction = request.getParameter("introduction");
         AccountDAO dao = new AccountDAO();
-        Account account = dao.getAccountByID(1);
-        String mess = (String) request.getAttribute("mess");
-        request.setAttribute("account", account);
-        request.setAttribute("mess", mess);
-        request.getRequestDispatcher("user-profile.jsp").forward(request, response);
-    }
+        dao.updateProfile(fullname, email, dob, gender, introduction, "1");
+        response.sendRedirect("Profile");
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -81,3 +83,4 @@ public class ProfileServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
