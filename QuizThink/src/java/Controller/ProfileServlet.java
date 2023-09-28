@@ -35,7 +35,9 @@ public class ProfileServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         AccountDAO dao = new AccountDAO();
         Account account = dao.getAccountByID(1);
+        String mess = (String) request.getAttribute("mess");
         request.setAttribute("account", account);
+        request.setAttribute("mess", mess);
         request.getRequestDispatcher("user-profile.jsp").forward(request, response);
     }
 

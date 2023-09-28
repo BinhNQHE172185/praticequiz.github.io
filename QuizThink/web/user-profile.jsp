@@ -376,7 +376,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form class="edit-profile">
+                                <form class="edit-profile" action="ChangePassword" method="post">
                                     <div class="">
                                         <div class="form-group row">
                                             <div class="col-sm-10 ml-auto">
@@ -399,6 +399,7 @@
                                             <label class="col-sm-2 col-form-label">Re Type Password</label>
                                             <div class="col-sm-7">
                                                 <input class="form-control" type="password" name="repassword" value="">
+                                                <span class="help">${mess}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -406,7 +407,7 @@
                                         <div class="col-sm-2">
                                         </div>
                                         <div class="col-sm-7">
-                                            <button type="reset" class="btn">Save changes</button>
+                                            <button class="btn">Save changes</button>
                                             <button type="reset" class="btn-secondry">Cancel</button>
                                         </div>
                                     </div>

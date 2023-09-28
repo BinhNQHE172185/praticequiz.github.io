@@ -34,14 +34,15 @@ public class ChangePasswordServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String password = request.getParameter("password");
         String repassword = request.getParameter("repassword");
-        if(password != repassword){
-            String mess = "Password doesn't not macth";
-            request.setAttribute("mess", mess);
-        }else{
+        if (password.equalsIgnoreCase(repassword)) {
             AccountDAO dao = new AccountDAO();
             dao.updatePassword(password, "1");
+            request.getRequestDispatcher("Profile").forward(request, response);
+        } else {
+            String mess = "Password doesn't not macth";
+            request.setAttribute("mess", mess);
+            request.getRequestDispatcher("user-profile.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("Profile").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
