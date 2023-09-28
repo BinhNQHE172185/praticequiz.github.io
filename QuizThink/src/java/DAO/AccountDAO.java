@@ -195,21 +195,20 @@ public class AccountDAO extends DBContext {
             rs = ps.executeQuery();
             while(rs.next()){
                 return new Account(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getDate(9),
-                        rs.getString(10),
-                        rs.getString(11),
-                        rs.getDate(12),
-                        rs.getDate(13),
-                        rs.getString(14),
-                        rs.getInt(15)
+                        rs.getInt("accountId"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("email"),
+                        rs.getString("fullname"),
+                        rs.getDate("dob"),
+                        rs.getString("gender"),
+                        rs.getString("selfIntroduction"),
+                        rs.getString("avatar"),
+                        rs.getDate("createdDate"),
+                        rs.getDate("modifyDate"),
+                        rs.getString("passwordToken"),
+                        rs.getInt("roleId"),
+                        rs.getBoolean("status")
                 );
             }
         } catch (Exception e) {
