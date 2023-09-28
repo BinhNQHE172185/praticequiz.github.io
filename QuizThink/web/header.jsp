@@ -13,8 +13,8 @@
                             <div class="topbar-right">
                                 <ul>
 
-                                    <li><a href="login.jsp">Login</a></li>
-                                    <li><a href="register.jsp">Register</a></li>
+                                    <li><a href="Login.jsp">Login</a></li>
+                                    <li><a href="Register.jsp">Register</a></li>
                                 </ul>
                             </div>
                         </div>
