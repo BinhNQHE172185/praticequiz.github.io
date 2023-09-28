@@ -23,8 +23,8 @@
         <meta name="format-detection" content="telephone=no">
 
         <!-- FAVICONS ICON ============================================= -->
-        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+        <link rel="icon" href="FrontEnd/assets/images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" type="image/x-icon" href="FrontEnd/assets/images/favicon.png" />
 
         <!-- PAGE TITLE HERE ============================================= -->
         <title>QUIZ THINK-Online Quiz Practice Web </title>
@@ -33,27 +33,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--[if lt IE 9]>
-        <script src="assets/js/html5shiv.min.js"></script>
-        <script src="assets/js/respond.min.js"></script>
+        <script src="FrontEnd/FrontEnd/assets/js/html5shiv.min.js"></script>
+        <script src="FrontEnd/FrontEnd/assets/js/respond.min.js"></script>
         <![endif]-->
 
         <!-- All PLUGINS CSS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="assets/css/assets.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/assets.css">
 
         <!-- TYPOGRAPHY ============================================= -->
-        <link rel="stylesheet" type="text/css" href="assets/css/typography.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/typography.css">
 
         <!-- SHORTCODES ============================================= -->
-        <link rel="stylesheet" type="text/css" href="assets/css/shortcodes/shortcodes.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/shortcodes/shortcodes.css">
 
         <!-- STYLESHEETS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/css/style.css">
+        <link class="skin" rel="stylesheet" type="text/css" href="FrontEnd/assets/css/color/color-1.css">
 
         <!-- REVOLUTION SLIDER CSS ============================================= -->
-        <link rel="stylesheet" type="text/css" href="assets/vendors/revolution/css/layers.css">
-        <link rel="stylesheet" type="text/css" href="assets/vendors/revolution/css/settings.css">
-        <link rel="stylesheet" type="text/css" href="assets/vendors/revolution/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/vendors/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/vendors/revolution/css/settings.css">
+        <link rel="stylesheet" type="text/css" href="FrontEnd/assets/vendors/revolution/css/navigation.css">
         <!-- REVOLUTION SLIDER END -->	
     </head>
     <body id="bg">
@@ -91,7 +91,7 @@
                                     data-param9="" data-param10="" 
                                     data-description="Science says that Women are generally happier">
                                     <!-- MAIN IMAGE -->
-                                    <img src="assets/images/slider/Slider1.png" alt="" 
+                                    <img src="FrontEnd/assets/images/slider/Slider1.png" alt="" 
                                          data-bgposition="center center" 
                                          data-bgfit="cover" 
                                          data-bgrepeat="no-repeat" 
@@ -233,7 +233,7 @@
                                     data-easein="default" 
                                     data-easeout="default" 
                                     data-masterspeed="default" 
-                                    data-thumb="assets/images/slider/slide1.png" 
+                                    data-thumb="FrontEnd/assets/images/slider/slide1.png" 
                                     data-rotate="0" 
                                     data-fstransition="fade" 
                                     data-fsmasterspeed="1500" 
@@ -247,7 +247,7 @@
                                     data-param9="" data-param10="" 
                                     data-description="Science says that Women are generally happier">
                                     <!-- MAIN IMAGE -->
-                                    <img src="assets/images/slider/Slider3.png" alt="" 
+                                    <img src="FrontEnd/assets/images/slider/Slider3.png" alt="" 
                                          data-bgposition="center center" 
                                          data-bgfit="cover" 
                                          data-bgrepeat="no-repeat" 
@@ -398,7 +398,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                     <div class="service-bx">
                                         <div class="action-box">
-                                            <img src="assets/images/our-services/pic1.jpg" alt="">
+                                            <img src="FrontEnd/assets/images/our-services/pic1.jpg" alt="">
                                         </div>
                                         <div class="info-bx text-center">
                                             <div class="feature-box-sm radius bg-white">
@@ -412,7 +412,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-6">
                                     <div class="service-bx">
                                         <div class="action-box">
-                                            <img src="assets/images/our-services/pic2.jpg" alt="">
+                                            <img src="FrontEnd/assets/images/our-services/pic2.jpg" alt="">
                                         </div>
                                         <div class="info-bx text-center">
                                             <div class="feature-box-sm radius bg-white">
@@ -426,7 +426,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                     <div class="service-bx m-b0">
                                         <div class="action-box">
-                                            <img src="assets/images/our-services/pic3.jpg" alt="">
+                                            <img src="FrontEnd/assets/images/our-services/pic3.jpg" alt="">
                                         </div>
                                         <div class="info-bx text-center">
                                             <div class="feature-box-sm radius bg-white">
@@ -456,7 +456,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic1.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic1.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -469,7 +469,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic2.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic2.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -482,7 +482,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic3.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic3.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -495,7 +495,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic4.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic4.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -515,7 +515,7 @@
                    
 
                     <!-- Testimonials -->
-                    <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/fpt1.png);">
+                    <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(FrontEnd/assets/images/background/fpt1.png);">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 text-white heading-bx left">
@@ -527,7 +527,7 @@
                                 <div class="item">
                                     <div class="testimonial-bx">
                                         <div class="testimonial-thumb">
-                                            <img src="assets/images/testimonials/pic1.jpg" alt="">
+                                            <img src="FrontEnd/assets/images/testimonials/pic1.jpg" alt="">
                                         </div>
                                         <div class="testimonial-info">
                                             <h5 class="name">Bui Ngoc Dung</h5>
@@ -541,7 +541,7 @@
                                 <div class="item">
                                     <div class="testimonial-bx">
                                         <div class="testimonial-thumb">
-                                            <img src="assets/images/testimonials/pic2.jpg" alt="">
+                                            <img src="FrontEnd/assets/images/testimonials/pic2.jpg" alt="">
                                         </div>
                                         <div class="testimonial-info">
                                             <h5 class="name">Truong Tuan Anh</h5>
@@ -571,7 +571,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic1.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic1.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -584,7 +584,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic2.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic2.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -597,7 +597,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic3.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic3.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -610,7 +610,7 @@
                                     <div class="item">
                                         <div class="cours-bx">
                                             <div class="action-box">
-                                                <img src="assets/images/courses/pic4.jpg" alt="">
+                                                <img src="FrontEnd/assets/images/courses/pic4.jpg" alt="">
                                                 <a href="#" class="btn">Read More</a>
                                             </div>
                                             <div class="info-bx text-center">
@@ -633,34 +633,34 @@
         </div>
 
         <!-- External JavaScripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
-        <script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-        <script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-        <script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
-        <script src="assets/vendors/counter/waypoints-min.js"></script>
-        <script src="assets/vendors/counter/counterup.min.js"></script>
-        <script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
-        <script src="assets/vendors/masonry/masonry.js"></script>
-        <script src="assets/vendors/masonry/filter.js"></script>
-        <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
-        <script src="assets/js/functions.js"></script>
-        <script src="assets/js/contact.js"></script>
-        <!--        <script src='assets/vendors/switcher/switcher.js'></script>-->
+        <script src="FrontEnd/assets/js/jquery.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/popper.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+        <script src="FrontEnd/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+        <script src="FrontEnd/assets/vendors/magnific-popup/magnific-popup.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/waypoints-min.js"></script>
+        <script src="FrontEnd/assets/vendors/counter/counterup.min.js"></script>
+        <script src="FrontEnd/assets/vendors/imagesloaded/imagesloaded.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/masonry.js"></script>
+        <script src="FrontEnd/assets/vendors/masonry/filter.js"></script>
+        <script src="FrontEnd/assets/vendors/owl-carousel/owl.carousel.js"></script>
+        <script src="FrontEnd/assets/js/functions.js"></script>
+        <script src="FrontEnd/assets/js/contact.js"></script>
+        <!--        <script src='FrontEnd/assets/vendors/switcher/switcher.js'></script>-->
         <!-- Revolution JavaScripts Files -->
-        <script src="assets/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-        <script src="assets/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
         <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-        <script src="assets/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="FrontEnd/assets/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
         <script>
             jQuery(document).ready(function () {
                 var ttrevapi;
@@ -670,7 +670,7 @@
                 } else {
                     ttrevapi = tpj("#rev_slider_486_1").show().revolution({
                         sliderType: "standard",
-                        jsFileLocation: "assets/vendors/revolution/js/",
+                        jsFileLocation: "FrontEnd/assets/vendors/revolution/js/",
                         sliderLayout: "fullwidth",
                         dottedOverlay: "none",
                         delay: 9000,

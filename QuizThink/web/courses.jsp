@@ -1,5 +1,6 @@
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,32 +134,21 @@
 			</div>
 			<div class="col-lg-9 col-md-8 col-sm-12">
 				<div class="row">
-					<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
+                                    <<c:forEach items="${listSubjects}" var="o">
+                                        <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 						<div class="cours-bx">
 							<div class="action-box">
-								<img src="assets/images/courses/pic1.jpg" alt="">
+								<img src="assets/images/courses/${o.getImageURL()}" alt="">
 								<a href="#" class="btn">Read More</a>
 							</div>
 							<div class="info-bx text-center">
-								<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
+								<h5><a href="#">${o.getTitle()}</a></h5>
 								<span>Programming</span>
 							</div>
 							
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
-						<div class="cours-bx">
-							<div class="action-box">
-								<img src="assets/images/courses/pic2.jpg" alt="">
-								<a href="#" class="btn">Read More</a>
-							</div>
-							<div class="info-bx text-center">
-								<h5><a href="#">Introduction EduChamp – LMS plugin</a></h5>
-								<span>Programming</span>
-							</div>
-							
-						</div>
-					</div>
+                                    </c:forEach>
 					<div class="col-md-6 col-lg-4 col-sm-6 m-b30">
 						<div class="cours-bx">
 							<div class="action-box">

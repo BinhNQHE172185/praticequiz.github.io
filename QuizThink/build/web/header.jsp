@@ -25,7 +25,7 @@
                         <div class="container clearfix">
                             <!-- Header Logo ==== -->
                             <div class="menu-logo">
-                                <a href="home.jsp"><img src="assets/images/logo-white-2.png" alt=""></a>
+                                <a href="home.jsp"><img src="FrontEnd/assets/images/logo-white-2.png" alt=""></a>
                             </div>
                             <!-- Mobile Nav Button ==== -->
                             <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
                             <!-- Navigation Menu ==== -->
                             <div class="menu-links navbar-collapse collapse justify-content-start" id="menuDropdown">
                                 <div class="menu-logo">
-                                    <a href="home.jsp"><img src="assets/images/logo.png" alt=""></a>
+                                    <a href="home.jsp"><img src="FrontEnd/assets/images/logo.png" alt=""></a>
                                 </div>
                                 <ul class="nav navbar-nav">	
                                     <li class="active"><a href="home.jsp">Home</a>

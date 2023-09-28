@@ -4,12 +4,12 @@
  */
 package DAO;
 
+import DAL.DBContext;
 import Model.Question;
-import Model.QuestionDetail;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,66 +17,73 @@ import java.util.List;
  *
  * @author kimdi
  */
-public class QuestionDAO extends BaseDAO {
+public class QuestionDAO extends DBContext {
+
+    public Question getQuestionById(int questionId) {
+        String sql = "SELECT * FROM Question WHERE Question_id = ?";
+        Question question = null;
+
+        try {
+            PreparedStatement statement = getConnection().prepareStatement(sql);
+            statement.setInt(1, questionId);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int subjectId = resultSet.getInt("Subject_id");
+                int expertId = resultSet.getInt("Expert_id");
+                String title = resultSet.getString("title");
+                String imageURL = resultSet.getString("imageURL");
+                int quizCount = resultSet.getInt("quiz_count");
+                String description = resultSet.getString("description");
+                float requirement = resultSet.getFloat("requirement");
+                Date createdDate = resultSet.getDate("createdDate");
+                Date modifyDate = resultSet.getDate("modifyDate");
+                boolean status = resultSet.getBoolean("status");
+                Time duration = resultSet.getTime("duration");
+
+                question = new Question(questionId, subjectId, expertId, title, imageURL, quizCount, description, requirement, createdDate, modifyDate, status, duration);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception ex) {
+            System.err.println("An error occurred while executing the query: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return question;
+    }
 
     public List<Question> getQuestionsBySubjectId(int subjectId) {
         String sql = "SELECT * FROM Question WHERE Subject_id = ?";
         List<Question> questions = new ArrayList<>();
 
         try {
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql);
             statement.setInt(1, subjectId);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 int questionId = resultSet.getInt("Question_id");
-                int accountId = resultSet.getInt("Account_id");
+                int expertId = resultSet.getInt("Expert_id");
                 String title = resultSet.getString("title");
                 String imageURL = resultSet.getString("imageURL");
-                int level = resultSet.getInt("level");
-                float duration = resultSet.getFloat("duration");
-                Date startTime = resultSet.getDate("Start_time");
-                Date endTime = resultSet.getDate("End_time");
-                int status = resultSet.getInt("Status");
-                int rate = resultSet.getInt("Rate");
-                int hasJoin = resultSet.getInt("hasJoin");
+                int quizCount = resultSet.getInt("quiz_count");
+                String description = resultSet.getString("description");
+                float requirement = resultSet.getFloat("requirement");
                 Date createdDate = resultSet.getDate("createdDate");
                 Date modifyDate = resultSet.getDate("modifyDate");
-                String description = resultSet.getString("discription");
+                boolean status = resultSet.getBoolean("status");
+                Time duration = resultSet.getTime("duration");
 
-                Question question = new Question(questionId, subjectId, accountId, title, imageURL, level, duration, startTime, endTime, status, rate, hasJoin, createdDate, modifyDate, description);
+                Question question = new Question(questionId, subjectId, expertId, title, imageURL, quizCount, description, requirement, createdDate, modifyDate, status, duration);
 
                 questions.add(question);
             }
-        } catch (SQLException ex) {
+            resultSet.close();
+            statement.close();
+        } catch (Exception ex) {
             System.err.println("An error occurred while executing the query: " + ex.getMessage());
             ex.printStackTrace();
         }
         return questions;
-    }
-
-    public List<QuestionDetail> getQuestionDetailsByQuestionId(int questionId) {
-        String sql = "SELECT * FROM QuestionDetail WHERE Question_id = ?";
-        List<QuestionDetail> questionDetails = new ArrayList<>();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, questionId);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                int questionDetailId = resultSet.getInt("QuestionDetail_id");
-                String description = resultSet.getString("description");
-                String imageURL = resultSet.getString("imageUrl");
-
-                QuestionDetail questionDetail = new QuestionDetail(questionDetailId, questionId, description, imageURL);
-
-                questionDetails.add(questionDetail);
-            }
-        } catch (SQLException ex) {
-            System.err.println("An error occurred while executing the query: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-        return questionDetails;
     }
 }

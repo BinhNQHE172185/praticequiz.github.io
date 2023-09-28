@@ -5,14 +5,15 @@
 package Controller;
 
 import DAO.QuestionDAO;
+import DAO.SubjectDAO;
 import Model.Question;
+import Model.Subject;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -36,10 +37,14 @@ public class QuestionListServlet extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //int subjectId = Integer.parseInt(request.getParameter("subjectId"));
-            int subjectId = 818;
+            int subjectId = 1;
+            
+            SubjectDAO subjectDAO = new SubjectDAO();
             QuestionDAO questionDAO = new QuestionDAO();
+            Subject subject = subjectDAO.getSubjectById(subjectId);
             List<Question> questions = questionDAO.getQuestionsBySubjectId(subjectId);
             
+            request.setAttribute("subject", subject);
             request.setAttribute("questions", questions);
             request.getRequestDispatcher("QuestionList.jsp").forward(request, response);
         }
