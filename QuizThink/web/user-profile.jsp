@@ -322,19 +322,19 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Full Name</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="text" name="fullname" value="">
+                                                <input class="form-control" type="text" name="fullname" value="${account.getFullname()}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="email" name="email" value="">
+                                                <input class="form-control" type="email" name="email" value="${account.getEmail()}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Date of Birth</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="date" name="dob" value="">
+                                                <input class="form-control" type="date" name="dob" value="${account.getDob()}">
                                                 <span class="help"></span>
                                             </div>
                                         </div>
@@ -350,7 +350,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Self-Introduction</label>
                                             <div class="col-sm-7">
-                                                <input class="form-control" type="text" name="introduction" value="">
+                                                <input class="form-control" type="text" name="introduction" value="${account.getSelfIntroduction()}">
                                                 <span class="help">Tell something about yourself.</span>
                                             </div>
                                         </div>
@@ -369,7 +369,7 @@
                                                 <div class="col-sm-2">
                                                 </div>
                                                 <div class="col-sm-7">
-                                                    <button type="reset" class="btn">Save changes</button>
+                                                    <button type="" class="btn">Save changes</button>
                                                     <button type="reset" class="btn-secondry">Cancel</button>
                                                 </div>
                                             </div>

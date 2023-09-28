@@ -18,7 +18,7 @@ public class DBContext {
         return DriverManager.getConnection(url, userID, password);
     }
     private final String serverName = "localhost";
-    private final String dbName = "SWP391_QuizPractice_QuizThink";
+    private final String dbName = "SWP391_QuizPractice_QuizThink_Test";
     private final String portNumber = "1433";
     private final String userID = "sa";
     private final String password = "admin";

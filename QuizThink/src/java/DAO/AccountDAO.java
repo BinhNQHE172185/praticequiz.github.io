@@ -232,4 +232,11 @@ public class AccountDAO extends DBContext {
 
         }
     }
+    
+    public static void main(String[] args) {
+        AccountDAO dao = new AccountDAO();
+        Account acc = new Account();
+        acc = dao.getAccountByID(1);
+        System.out.println(acc.getFullname());
+    }
 }
