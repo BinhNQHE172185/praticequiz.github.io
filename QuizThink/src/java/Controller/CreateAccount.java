@@ -52,7 +52,7 @@ public class CreateAccount extends HttpServlet {
         DAO.createAnyAccount(username, password, email, status, gender, avatar, fullname, DOB, address, phonenumber, role_id);
         
         //response.sendRedirect("/Front%20End/Admin/Dashboard.jsp");
-        request.getRequestDispatcher("/Front End/Admin/CreateUser.jsp").forward(request, response);
+        request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
         
     } 
 

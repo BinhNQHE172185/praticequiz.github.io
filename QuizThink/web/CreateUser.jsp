@@ -30,7 +30,7 @@
 	
 	<!-- FAVICONS ICON ============================================= -->
 	<link rel="icon" href="../error-404.html" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="admin/assets/images/favicon.png" />
 	
 	<!-- PAGE TITLE HERE ============================================= -->
 	<title>EduChamp : Education HTML Template </title>
@@ -44,19 +44,19 @@
 	<![endif]-->
 	
 	<!-- All PLUGINS CSS ============================================= -->
-	<link rel="stylesheet" type="text/css" href="assets/css/assets.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendors/calendar/fullcalendar.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/css/assets.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/vendors/calendar/fullcalendar.css">
 	
 	<!-- TYPOGRAPHY ============================================= -->
-	<link rel="stylesheet" type="text/css" href="assets/css/typography.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/css/typography.css">
 	
 	<!-- SHORTCODES ============================================= -->
-	<link rel="stylesheet" type="text/css" href="assets/css/shortcodes/shortcodes.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/css/shortcodes/shortcodes.css">
 	
 	<!-- STYLESHEETS ============================================= -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
-	<link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="admin/assets/css/dashboard.css">
+	<link class="skin" rel="stylesheet" type="text/css" href="admin/assets/css/color/color-1.css">
 	
 </head>
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
@@ -100,16 +100,16 @@
                                                                         <div class="form-group row">
                                                                             <label class="col-sm-2 col-form-label">Role</label>
                                                                             <div class="col-sm-7">
-                                                                                <input type="radio" id="customerRole" name="role" value="5">
+                                                                                <input type="radio" id="customerRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="customerRole">Customer</label><br>
 
-                                                                                <input type="radio" id="expertRole" name="role" value="3">
+                                                                                <input type="radio" id="expertRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="expertRole">Expert</label><br>
 
                                                                                 <input type="radio" id="saleRole" name="role" value="2">
                                                                                 <label class="col-sm-2 col-form-label" for="saleRole">Sale</label><br>
 
-                                                                                <input type="radio" id="membershipRole" name="role" value="6">
+                                                                                <input type="radio" id="membershipRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="membershipRole">Membership</label><br>
                                                                             </div>
                                                                         </div>
@@ -186,24 +186,24 @@
 		</div>
 	</main>
 <!-- External JavaScripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/vendors/bootstrap/js/popper.min.js"></script>
-<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-<script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
-<script src="assets/vendors/counter/waypoints-min.js"></script>
-<script src="assets/vendors/counter/counterup.min.js"></script>
-<script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
-<script src="assets/vendors/masonry/masonry.js"></script>
-<script src="assets/vendors/masonry/filter.js"></script>
-<script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
-<script src='assets/vendors/scroll/scrollbar.min.js'></script>
-<script src="assets/js/functions.js"></script>
-<script src="assets/vendors/chart/chart.min.js"></script>
-<script src="assets/js/admin.js"></script>
-<script src='assets/vendors/calendar/moment.min.js'></script>
-<script src='assets/vendors/calendar/fullcalendar.js'></script>
+<script src="admin/assets/js/jquery.min.js"></script>
+<script src="admin/assets/vendors/bootstrap/js/popper.min.js"></script>
+<script src="admin/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="admin/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="admin/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+<script src="admin/assets/vendors/magnific-popup/magnific-popup.js"></script>
+<script src="admin/assets/vendors/counter/waypoints-min.js"></script>
+<script src="admin/assets/vendors/counter/counterup.min.js"></script>
+<script src="admin/assets/vendors/imagesloaded/imagesloaded.js"></script>
+<script src="admin/assets/vendors/masonry/masonry.js"></script>
+<script src="admin/assets/vendors/masonry/filter.js"></script>
+<script src="admin/assets/vendors/owl-carousel/owl.carousel.js"></script>
+<script src='admin/assets/vendors/scroll/scrollbar.min.js'></script>
+<script src="admin/assets/js/functions.js"></script>
+<script src="admin/assets/vendors/chart/chart.min.js"></script>
+<script src="admin/assets/js/admin.js"></script>
+<script src='admin/assets/vendors/calendar/moment.min.js'></script>
+<script src='admin/assets/vendors/calendar/fullcalendar.js'></script>
 
 <!-- <script src='assets/vendors/switcher/switcher.js'></script> -->
 <script>

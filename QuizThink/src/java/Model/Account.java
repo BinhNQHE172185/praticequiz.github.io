@@ -158,4 +158,10 @@ public class Account {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" + "accountId=" + accountId + ", username=" + username + ", password=" + password + ", email=" + email + ", fullname=" + fullname + ", dob=" + dob + ", gender=" + gender + ", selfIntroduction=" + selfIntroduction + ", avatar=" + avatar + ", createdDate=" + createdDate + ", modifyDate=" + modifyDate + ", passwordToken=" + passwordToken + ", roleId=" + roleId + ", status=" + status + '}';
+    }
+      
 }
