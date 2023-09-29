@@ -36,10 +36,10 @@ public class ChangePasswordServlet extends HttpServlet {
         String repassword = request.getParameter("repassword");
         if (password.equalsIgnoreCase(repassword)) {
             AccountDAO dao = new AccountDAO();
-            dao.updatePassword(password, "1");      
+            dao.updatePassword(password, "1");
         } else {
             String mess = "Password doesn't not macth";
-            request.setAttribute("mess", mess);           
+            request.setAttribute("mess", mess);
         }
         request.getRequestDispatcher("Profile").forward(request, response);
     }

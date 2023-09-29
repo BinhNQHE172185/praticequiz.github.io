@@ -215,4 +215,34 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
+
+    public void updateProfile(String fullname, String email, String dob, String gender, String introduction, String accountID) {
+        String query = "update Account set fullname = ?, email = ?, DOB = ?, gender = ?, [self-introduction] = ? where Account_id =?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, fullname);
+            ps.setString(2, email);
+            ps.setString(3, dob);
+            ps.setString(4, gender);
+            ps.setString(5, introduction);
+            ps.setString(6, accountID);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+
+        }
+    }
+    
+    public void updatePassword(String password, String accountID){
+        String query ="update Account set password = ? where Account_id =?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, password);
+            ps.setString(2, accountID);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+
+        }
+    }
 }
