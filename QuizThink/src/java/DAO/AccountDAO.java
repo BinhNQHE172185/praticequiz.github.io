@@ -86,12 +86,11 @@ public class AccountDAO extends DBContext {
             ps.setString(5, DOB);
             ps.setString(6, gender);
             ps.setString(7, avatar);
-            ps.setInt(10, roleId);
+            ps.setInt(9, roleId);
 
             LocalDateTime currentTime = LocalDateTime.now();
             Date createdDate = Date.valueOf(currentTime.toLocalDate());
             ps.setDate(8, createdDate);
-            ps.setInt(12, roleId);
             ps.executeUpdate(); // no result ==> no need result set
         } catch (Exception e) {
             // Handle exceptions here
@@ -119,35 +118,35 @@ public class AccountDAO extends DBContext {
     //Get all account
     public List<Account> getAllAccount(int page) {
         List<Account> list = new ArrayList<>();
-        String query = "SELECT * FROM Account\n"
-                + "ORDER BY Account_id\n"
-                + "OFFSET ? ROWS FETCH NEXT 15 ROWS ONLY";
+        String query = "SELECT * FROM Account\n" +
+                        "ORDER BY Account_id\n" +
+                        "OFFSET ? ROWS FETCH NEXT 15 ROWS ONLY";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setInt(1, (page - 1) * 15); // page 1 starts at index 0
             rs = ps.executeQuery();
             while (rs.next()) {
-                Account account = new Account(
-                        rs.getInt("Account_id"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("email"),
-                        rs.getString("fullname"),
-                        rs.getDate("DOB"),
-                        rs.getString("gender"),
-                        rs.getString("self-introduction"),
-                        rs.getString("avatar"),
-                        rs.getDate("createdDate"),
-                        rs.getDate("modifyDate"),
-                        rs.getString("passwordToken"),
-                        rs.getInt("role_id"),
-                        rs.getBoolean("status")
-                );
-                list.add(account);
+                list.add( new Account(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getDate(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getBoolean(14)
+                ));
+                
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return list;
     }
@@ -162,24 +161,24 @@ public class AccountDAO extends DBContext {
             rs = ps.executeQuery();
             if (rs.next()) {
                 return new Account(
-                        rs.getInt("Account_id"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("email"),
-                        rs.getString("fullname"),
-                        rs.getDate("DOB"),
-                        rs.getString("gender"),
-                        rs.getString("self-introduction"),
-                        rs.getString("avatar"),
-                        rs.getDate("createdDate"),
-                        rs.getDate("modifyDate"),
-                        rs.getString("passwordToken"),
-                        rs.getInt("role_id"),
-                        rs.getBoolean("status")
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getDate(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getBoolean(14)
                 );
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return null;
     }
@@ -194,20 +193,20 @@ public class AccountDAO extends DBContext {
             rs = ps.executeQuery();
             while(rs.next()){
                 return new Account(
-                        rs.getInt("accountId"),
-                        rs.getString("username"),
-                        rs.getString("password"),
-                        rs.getString("email"),
-                        rs.getString("fullname"),
-                        rs.getDate("dob"),
-                        rs.getString("gender"),
-                        rs.getString("selfIntroduction"),
-                        rs.getString("avatar"),
-                        rs.getDate("createdDate"),
-                        rs.getDate("modifyDate"),
-                        rs.getString("passwordToken"),
-                        rs.getInt("roleId"),
-                        rs.getBoolean("status")
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getDate(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getDate(10),
+                        rs.getDate(11),
+                        rs.getString(12),
+                        rs.getInt(13),
+                        rs.getBoolean(14)
                 );
             }
         } catch (Exception e) {
@@ -217,9 +216,14 @@ public class AccountDAO extends DBContext {
     public static void main(String[] args) {
         try {
             AccountDAO dao = new AccountDAO();
-            dao.createAnyAccount("admin", "admin", "admin", "admin", "Female", "admin", "admin", "20-2-2003", "admin", "00215355", 1);
-            //dao.createAnyAccount(username, password, email, status, gender, avatar, fullname, DOB, address, phonenumber, 0);
+            dao.createAnyAccount("admin", "admin", "hung@gmail.com", "admin", "Female", "abc.png", "admin", "2022-03-02", "admin", "02356688", 2);
+//            List<Account> list= dao.getAllAccount(1);
+//            for(Account o : list){
+//                System.out.println(o);
+//            }
+            
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -100,16 +100,16 @@
                                                                         <div class="form-group row">
                                                                             <label class="col-sm-2 col-form-label">Role</label>
                                                                             <div class="col-sm-7">
-                                                                                <input type="radio" id="customerRole" name="role" value="5">
+                                                                                <input type="radio" id="customerRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="customerRole">Customer</label><br>
 
-                                                                                <input type="radio" id="expertRole" name="role" value="3">
+                                                                                <input type="radio" id="expertRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="expertRole">Expert</label><br>
 
                                                                                 <input type="radio" id="saleRole" name="role" value="2">
                                                                                 <label class="col-sm-2 col-form-label" for="saleRole">Sale</label><br>
 
-                                                                                <input type="radio" id="membershipRole" name="role" value="6">
+                                                                                <input type="radio" id="membershipRole" name="role" value="1">
                                                                                 <label class="col-sm-2 col-form-label" for="membershipRole">Membership</label><br>
                                                                             </div>
                                                                         </div>
