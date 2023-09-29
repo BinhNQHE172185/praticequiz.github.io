@@ -73,25 +73,24 @@ public class AccountDAO extends DBContext {
 
     // Create new Account which could be expert marketing sale, customer, membership
     public void createAnyAccount(String username, String password, String email, String status, String gender, String avatar, String fullname, String DOB, String address, String phonenumber, int roleId) {
-        String query = "INSERT INTO [Account] ([username], [password], [email], [status], [gender], [avatar], [fullname], [DOB], [address], [phonenumber], [createdDate], [modifyDate], [passwordToken], [role_id])\n"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, ?);";
+        String query = "INSERT INTO [Account] ([username], [password], [email], [fullname], [DOB], [gender], [self-introduction], [avatar], [createdDate], [modifyDate], [passwordToken], [role_id], [status])\n" +
+"VALUES (?, ?, ?, ?, ?, ?, NULL, ?, ?, NULL, NULL, ?, 1);";
+        
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2, password);
             ps.setString(3, email);
-            ps.setString(4, status);
-            ps.setString(5, gender);
-            ps.setString(6, avatar);
-            ps.setString(7, fullname);
-            ps.setString(8, DOB);
-            ps.setString(9, address);
-            ps.setString(10, phonenumber);
+            ps.setString(4, fullname);
+            ps.setString(5, DOB);
+            ps.setString(6, gender);
+            ps.setString(7, avatar);
+            ps.setInt(10, roleId);
 
             LocalDateTime currentTime = LocalDateTime.now();
             Date createdDate = Date.valueOf(currentTime.toLocalDate());
-            ps.setDate(11, createdDate);
+            ps.setDate(8, createdDate);
             ps.setInt(12, roleId);
             ps.executeUpdate(); // no result ==> no need result set
         } catch (Exception e) {
@@ -214,5 +213,13 @@ public class AccountDAO extends DBContext {
         } catch (Exception e) {
         }
         return null;
+    }
+    public static void main(String[] args) {
+        try {
+            AccountDAO dao = new AccountDAO();
+            dao.createAnyAccount("admin", "admin", "admin", "admin", "Female", "admin", "admin", "20-2-2003", "admin", "00215355", 1);
+            //dao.createAnyAccount(username, password, email, status, gender, avatar, fullname, DOB, address, phonenumber, 0);
+        } catch (Exception e) {
+        }
     }
 }
