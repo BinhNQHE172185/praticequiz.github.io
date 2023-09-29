@@ -12,14 +12,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import Model.Account;
 
 /**
  *
  * @author admin
  */
-@WebServlet(name = "ProfileServlet", urlPatterns = {"/Profile"})
-public class ProfileServlet extends HttpServlet {
+@WebServlet(name = "ChangePasswordServlet", urlPatterns = {"/ChangePassword"})
+public class ChangePasswordServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,12 +32,16 @@ public class ProfileServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        AccountDAO dao = new AccountDAO();
-        Account account = dao.getAccountByID(1);
-        String mess = (String) request.getAttribute("mess");
-        request.setAttribute("account", account);
-        request.setAttribute("mess", mess);
-        request.getRequestDispatcher("user-profile.jsp").forward(request, response);
+        String password = request.getParameter("password");
+        String repassword = request.getParameter("repassword");
+        if (password.equalsIgnoreCase(repassword)) {
+            AccountDAO dao = new AccountDAO();
+            dao.updatePassword(password, "1");
+        } else {
+            String mess = "Password doesn't not macth";
+            request.setAttribute("mess", mess);
+        }
+        request.getRequestDispatcher("Profile").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
