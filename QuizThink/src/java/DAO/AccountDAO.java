@@ -20,11 +20,11 @@ import java.util.*;
  * @author LEMONLORD
  */
 public class AccountDAO extends DBContext {
-    
+
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
     public Account getAccount(String username, String password) {
         Account account = null;
         int accountId;
@@ -182,16 +182,16 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
-    
+
     // Get  Account by ID
-    public Account getAccountByID(String Account_ID){
+    public Account getAccountByID(String Account_ID) {
         String query = "select * from Account where account_id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, Account_ID);
             rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 return new Account(
                         rs.getInt(1),
                         rs.getString(2),
@@ -213,17 +213,35 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
-    public static void main(String[] args) {
+
+    public void updateProfile(String fullname, String email, String dob, String gender, String introduction, String accountID) {
+        String query = "update Account set fullname = ?, email = ?, DOB = ?, gender = ?, [self-introduction] = ? where Account_id =?";
         try {
-            AccountDAO dao = new AccountDAO();
-            dao.createAnyAccount("admin", "admin", "hung@gmail.com", "admin", "Female", "abc.png", "admin", "2022-03-02", "admin", "02356688", 2);
-//            List<Account> list= dao.getAllAccount(1);
-//            for(Account o : list){
-//                System.out.println(o);
-//            }
-            
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, fullname);
+            ps.setString(2, email);
+            ps.setString(3, dob);
+            ps.setString(4, gender);
+            ps.setString(5, introduction);
+            ps.setString(6, accountID);
+            rs = ps.executeQuery();
         } catch (Exception e) {
-            e.printStackTrace();
+
+        }
+    }
+    
+    public void updatePassword(String password, String accountID){
+        String query ="update Account set password = ? where Account_id =?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, password);
+            ps.setString(2, accountID);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+
+
         }
     }
 }
